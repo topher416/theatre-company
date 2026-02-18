@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Thin Place Between Here and There</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@300;400&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ink: #0a0a0a;
+  --bone: #f0ebe3;
+  --ember: #d4622b;
+  --ghost: rgba(240, 235, 227, 0.06);
+  --gold: #c9a84c;
+  --deep: #1a1714;
+  --smoke: rgba(240, 235, 227, 0.35);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ===== GRAIN OVERLAY ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ===== SCROLL PROGRESS ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--ember);
+  z-index: 10000;
+  transition: width 0.1s linear;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(212, 98, 43, 0.08), transparent),
+    radial-gradient(ellipse 80% 60% at 30% 70%, rgba(201, 168, 76, 0.04), transparent);
+  animation: breathe 8s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.hero-epigraph {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  color: var(--smoke);
+  letter-spacing: 0.03em;
+  line-height: 1.8;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+  opacity: 0;
+  animation: fadeUp 1.5s ease 0.3s forwards;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--bone);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeUp 1.5s ease 0.6s forwards;
+}
+
+.hero-title .thin {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ember);
+}
+
+.hero-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 1.5s ease 0.9s forwards;
+}
+
+.hero-line {
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--ember), transparent);
+  margin: 3rem auto 0;
+  opacity: 0;
+  animation: fadeUp 1.5s ease 1.2s forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 8vw, 6rem);
+  position: relative;
+}
+
+.section-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===== THE CALL ===== */
+.the-call {
+  background: var(--deep);
+  border-top: 1px solid rgba(240, 235, 227, 0.06);
+  border-bottom: 1px solid rgba(240, 235, 227, 0.06);
+}
+
+.manifesto-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--bone);
+  margin-bottom: 2rem;
+}
+
+.manifesto-text em {
+  color: var(--ember);
+  font-style: italic;
+}
+
+.manifesto-text strong {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ===== STATS / PROOF ===== */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  margin: 3rem 0;
+}
+
+.proof-card {
+  background: rgba(240, 235, 227, 0.03);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: background 0.4s ease;
+}
+
+.proof-card:hover {
+  background: rgba(212, 98, 43, 0.08);
+}
+
+.proof-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--ember);
+  line-height: 1;
+}
+
+.proof-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin-top: 0.75rem;
+}
+
+/* ===== QUOTES ===== */
+.quote-section {
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.quote-block {
+  position: relative;
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(240, 235, 227, 0.06);
+}
+
+.quote-block:last-child { border-bottom: none; }
+
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  line-height: 1.6;
+  color: var(--bone);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.quote-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+
+.quote-source {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ember);
+  padding-left: 2rem;
+}
+
+/* ===== THE PLAY ===== */
+.the-play {
+  background: linear-gradient(180deg, var(--deep) 0%, var(--ink) 100%);
+}
+
+.play-title-display {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  font-style: italic;
+  color: var(--bone);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.play-author {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.play-description {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--smoke);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.play-description em {
+  color: var(--bone);
+  font-style: italic;
+}
+
+.critics-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--gold);
+  padding: 0.4rem 1.2rem;
+  margin: 2rem auto;
+  display: block;
+  width: fit-content;
+}
+
+/* ===== TIMELINE ===== */
+.timeline-section {
+  background: var(--ink);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--ember), var(--gold), transparent);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 3rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -3rem;
+  top: 0.5rem;
+  width: 7px;
+  height: 7px;
+  background: var(--ember);
+  border-radius: 50%;
+  transform: translateX(-3px);
+}
+
+.timeline-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--bone);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--smoke);
+}
+
+/* ===== FOUNDERS ===== */
+.founders-section {
+  background: var(--deep);
+  border-top: 1px solid rgba(240, 235, 227, 0.06);
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  .founders-grid { grid-template-columns: 1fr; }
+}
+
+.founder-card {
+  padding: 2rem;
+  background: rgba(240, 235, 227, 0.02);
+  border: 1px solid rgba(240, 235, 227, 0.06);
+  transition: border-color 0.4s ease;
+}
+
+.founder-card:hover {
+  border-color: rgba(212, 98, 43, 0.3);
+}
+
+.founder-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--bone);
+  margin-bottom: 0.3rem;
+}
+
+.founder-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.founder-bio {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--smoke);
+}
+
+.founder-creds {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(240, 235, 227, 0.06);
+}
+
+.cred {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: rgba(240, 235, 227, 0.25);
+  line-height: 2;
+  text-transform: uppercase;
+}
+
+/* ===== OATH ===== */
+.oath-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  position: relative;
+}
+
+.oath-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(201, 168, 76, 0.04), transparent);
+}
+
+.oath-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 2rem;
+}
+
+.oath-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 2rem;
+}
+
+.oath-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  line-height: 1.7;
+  color: var(--bone);
+  font-weight: 400;
+}
+
+.oath-text em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.oath-sig {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(240, 235, 227, 0.1);
+}
+
+.oath-sig-line {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--smoke);
+}
+
+/* ===== CLOSER ===== */
+.closer {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--deep);
+  border-top: 1px solid rgba(240, 235, 227, 0.06);
+}
+
+.closer-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 227, 0.2);
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== CURSOR GLOW ===== */
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 98, 43, 0.06), transparent 70%);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: left 0.3s ease, top 0.3s ease;
+}
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-epigraph">
+      "Everyone who ever died is still here,<br>
+      just in a different part of here."
+    </p>
+    <h1 class="hero-title">
+      THE <span class="thin">THIN</span><br>PLACE
+    </h1>
+    <p class="hero-subtitle">Chicago &bull; October 2027</p>
+    <div class="hero-line"></div>
+  </div>
+</section>
+
+<!-- ===== THE CALL ===== -->
+<section class="the-call">
+  <div class="section-inner">
+    <p class="manifesto-text fade-in">
+      We are not waiting for permission.<br>
+      We are not waiting for a grant.<br>
+      We are not waiting for someone to <em>discover</em> us.
+    </p>
+    <p class="manifesto-text fade-in">
+      We are building a theatre company in <strong>Chicago</strong>&mdash;one of the richest theatre cities on earth&mdash;from nothing but conviction, craft, and the willingness to do the work.
+    </p>
+    <p class="manifesto-text fade-in">
+      The opportunity will not fall from the clouds.<br>
+      <em>We are going to make it.</em>
+    </p>
+  </div>
+</section>
+
+<!-- ===== PROOF ===== -->
+<section style="background: var(--ink);">
+  <div class="section-inner">
+    <div class="proof-grid fade-in">
+      <div class="proof-card">
+        <div class="proof-number">25+</div>
+        <div class="proof-label">Years combined<br>professional stage experience</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number">40+</div>
+        <div class="proof-label">Professional<br>productions</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number">6</div>
+        <div class="proof-label">Conservatory &<br>training programs</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number">1</div>
+        <div class="proof-label">New York Times<br>review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT THEY SAID ===== -->
+<section class="quote-section">
+  <div class="section-inner">
+    <div class="quote-block fade-in">
+      <p class="quote-text">"Rasmussen plays his character above it all. Austere with a trace of snark, he never lapsed into conceit that would have diminished the play's final effects."</p>
+      <p class="quote-source">Salt Lake Tribune</p>
+    </div>
+    <div class="quote-block fade-in">
+      <p class="quote-text">"Stokes-Wylie is both brazen and suffering&hellip; You would be hard-pressed to find more real performers. And they are funny too."</p>
+      <p class="quote-source">Front Row Reviewers</p>
+    </div>
+    <div class="quote-block fade-in">
+      <p class="quote-text">"She is one of the most compelling actors I have ever watched on stage, and one of the most diligent collaborators I have seen in the rehearsal room."</p>
+      <p class="quote-source">Shannon Musgrave &mdash; Carnegie Mellon School of Drama</p>
+    </div>
+    <div class="quote-block fade-in">
+      <p class="quote-text">"Rasmussen's character as a soldier is strangely poignant."</p>
+      <p class="quote-source">The Utah Review</p>
+    </div>
+    <div class="quote-block fade-in">
+      <p class="quote-text">"Stokes-Wylie really digs in here and turns Cahill's words into an intense jousting match that enlightens and provokes."</p>
+      <p class="quote-source">Salt Lake Magazine</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE PLAY ===== -->
+<section class="the-play">
+  <div class="section-inner">
+    <div class="fade-in">
+      <p class="play-title-display">The Thin Place</p>
+      <p class="play-author">by Lucas Hnath</p>
+      <p class="play-description">
+        A play about a psychic medium. About the membrane between belief and doubt. About <em>what happens when one mind reaches into another</em>. Staged as a theatrical séance in an intimate space where the line between performer and audience dissolves.
+      </p>
+      <p class="play-description">
+        Four actors. One room. The lights go down. <em>And then you feel it.</em>
+      </p>
+      <div class="critics-badge">New York Times Critics' Pick</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section class="timeline-section">
+  <div class="section-inner">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Now &mdash; Spring 2026</div>
+        <div class="timeline-title">Build the Foundation</div>
+        <div class="timeline-desc">Incorporate. Secure fiscal sponsorship. Contact Equity. Inquire with Concord Theatricals. Join the League of Chicago Theatres. See every show we can. Meet everyone we can. Plant seeds.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Summer 2026</div>
+        <div class="timeline-title">Assemble</div>
+        <div class="timeline-desc">Find our director. Cast the reading. Book the space. Build the invite list with care&mdash;every person in that room is a potential collaborator, advocate, or audience member for life.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">October 2026</div>
+        <div class="timeline-title">The Reading</div>
+        <div class="timeline-desc">An invited audience. Scripts in hand. The first time this company puts work in front of people. Our debut in Chicago. The impression we make here is the foundation of everything that follows.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Winter 2026&ndash;27</div>
+        <div class="timeline-title">Formalize & Fund</div>
+        <div class="timeline-desc">501(c)(3) incorporation. Board installation. Founding Circle fundraising. Production license secured. Director and designers engaged. The machine begins to run.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Summer 2027</div>
+        <div class="timeline-title">The Campaign</div>
+        <div class="timeline-desc">Crowdfunding launch. Casting. Rehearsals begin. Press outreach. The community begins to hear our name.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">October 2027</div>
+        <div class="timeline-title">Opening Night</div>
+        <div class="timeline-desc">The lights go down in a Chicago storefront theatre. Four actors. One play about the thin place between this world and another. Our first production. Not our last.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOUNDERS ===== -->
+<section class="founders-section">
+  <div class="section-inner">
+    <div class="founders-grid">
+      <div class="founder-card fade-in">
+        <div class="founder-name">Cassandra Stokes-Wylie</div>
+        <div class="founder-role">Co-Founder &bull; AEA</div>
+        <div class="founder-bio">
+          Professional actress, literary manager, and development professional. A decade inside the producing office of a respected regional theatre. She has negotiated Equity contracts, planned seasons, cast productions, shepherded new plays from first reading to world premiere, and performed roles that critics called "mesmerizing" and "pitch perfect."
+        </div>
+        <div class="founder-creds">
+          <div class="cred">BFA &mdash; University of Utah Actor Training Program</div>
+          <div class="cred">Steppenwolf West &bull; Stella Adler &bull; Milwaukee Rep</div>
+          <div class="cred">Shakespeare & Company</div>
+          <div class="cred">Edgerton Foundation New Play Award</div>
+          <div class="cred">New York Times &bull; Salt Lake Tribune &bull; Salt Lake Magazine</div>
+        </div>
+      </div>
+      <div class="founder-card fade-in">
+        <div class="founder-name">Topher Rasmussen</div>
+        <div class="founder-role">Co-Founder</div>
+        <div class="founder-bio">
+          Professional actor, director, producer, and dramaturg. Over a decade of stage work at Salt Lake Acting Company, Plan-B Theatre, and Grassroots Shakespeare. A communications strategist who builds websites, produces video, designs graphics, and writes the pitch. He brings the rare thing most theatre founders lack: the business alongside the art.
+        </div>
+        <div class="founder-creds">
+          <div class="cred">BS Theatre Arts & Psychology &bull; MSW</div>
+          <div class="cred">Salt Lake Acting Company &bull; Plan-B Theatre</div>
+          <div class="cred">Irene Ryan Regional Finalist</div>
+          <div class="cred">Kennedy Center ACTF: Outstanding Production</div>
+          <div class="cred">Salt Lake Tribune &bull; Utah Review &bull; Deseret News</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HISTORICAL LINEAGE ===== -->
+<section style="background: var(--ink); border-top: 1px solid rgba(240,235,227,0.06);">
+  <div class="section-inner">
+    <p class="manifesto-text fade-in" style="font-size: clamp(1rem, 2vw, 1.4rem); color: var(--smoke);">
+      <strong style="color: var(--bone);">Steppenwolf</strong> started in a church basement in Highland Park with no money, no experience, and no institutional support. <strong style="color: var(--bone);">The Wooster Group</strong> built a world from found objects in a SoHo garage. <strong style="color: var(--bone);">Plan-B Theatre</strong> has operated for thirty years on a micro-budget, producing some of the most respected new work in the country.
+    </p>
+    <p class="manifesto-text fade-in" style="font-size: clamp(1rem, 2vw, 1.4rem); color: var(--smoke);">
+      None of them were rescued by a foundation. None of them went viral. They <em>persisted</em>.
+    </p>
+    <p class="manifesto-text fade-in" style="font-size: clamp(1rem, 2vw, 1.4rem); color: var(--smoke);">
+      Every surviving scrappy theatre shares common DNA: a core group of <strong style="color: var(--gold);">irrationally committed people</strong>, a specific artistic identity that is genuinely distinctive, fiscal discipline bordering on asceticism, and the patience to build an audience <em>one show at a time, one audience member at a time</em>, through the quality of the work itself.
+    </p>
+  </div>
+</section>
+
+<!-- ===== THE OATH ===== -->
+<section class="oath-section">
+  <div class="oath-content fade-in">
+    <div class="oath-label">A Founding Commitment</div>
+    <p class="oath-text">
+      We will not make art that preaches.<br>
+      We will not make art that flatters.<br>
+      We will make art that <em>moves</em>.<br><br>
+      We will not wait for someone to open the door.<br>
+      We will build our own door.<br><br>
+      We are willing to do the hard work.<br>
+      We are willing to make sacrifices.<br>
+      This feels like a <em>deep calling</em><br>
+      and we are in a city with one of the richest<br>
+      theatre histories in the country,<br>
+      if not the world.<br><br>
+      <em>We are going to make it.</em>
+    </p>
+    <div class="oath-sig">
+      <p class="oath-sig-line">Chicago, 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLOSER ===== -->
+<div class="closer">
+  <p class="closer-text">This is the beginning</p>
+</div>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+  document.getElementById('scrollProgress').style.width = progress + '%';
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 100);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-in, .timeline-item').forEach(el => observer.observe(el));
+
+// Cursor glow
+const glow = document.getElementById('cursorGlow');
+let mouseX = -300, mouseY = -300;
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+function updateGlow() {
+  glow.style.left = mouseX + 'px';
+  glow.style.top = mouseY + 'px';
+  requestAnimationFrame(updateGlow);
+}
+updateGlow();
+</script>
+
+</body>
+</html>

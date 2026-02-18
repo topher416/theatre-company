@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founders' Syllabus — A Self-Directed Education in Building a Theatre Company</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Mono:wght@300;400&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --parchment: #f5f0e8;
+  --ink: #1a1815;
+  --sepia: #8b7355;
+  --rust: #a0522d;
+  --deep-green: #2d4a3e;
+  --cream: #faf8f3;
+  --warm-gray: #6b6560;
+  --gold-accent: #b8941f;
+  --shadow: rgba(26, 24, 21, 0.08);
+  --rule: rgba(139, 115, 85, 0.25);
+}
+
+html { scroll-behavior: smooth; font-size: 17px; }
+
+body {
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== TEXTURE ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(245, 240, 232, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.7rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.nav-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--sepia);
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--rust); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 8vw, 6rem) clamp(3rem, 6vw, 5rem);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-overline {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--rust);
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--warm-gray);
+  max-width: 550px;
+  line-height: 1.8;
+}
+
+.hero-meta {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sepia);
+}
+
+.meta-item span {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin-top: 0.25rem;
+}
+
+/* ===== MODULE STRUCTURE ===== */
+.module-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 8vw, 6rem);
+}
+
+.module {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-top: 1px solid var(--rule);
+}
+
+.module-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--sepia);
+  margin-bottom: 0.5rem;
+}
+
+.module-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.module-subtitle {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--warm-gray);
+  margin-bottom: 1.5rem;
+}
+
+.module-intro {
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 640px;
+}
+
+/* ===== ASSIGNMENT CARDS ===== */
+.assignment {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1rem;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.assignment:hover {
+  border-color: rgba(160, 82, 45, 0.4);
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+.assignment-type {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.type-read { color: var(--deep-green); background: rgba(45, 74, 62, 0.08); }
+.type-watch { color: #6b3fa0; background: rgba(107, 63, 160, 0.08); }
+.type-listen { color: #a05228; background: rgba(160, 82, 40, 0.08); }
+.type-do { color: var(--gold-accent); background: rgba(184, 148, 31, 0.1); }
+.type-visit { color: #2868a0; background: rgba(40, 104, 160, 0.08); }
+.type-study { color: var(--sepia); background: rgba(139, 115, 85, 0.1); }
+
+.assignment-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.assignment-author {
+  font-size: 0.8rem;
+  color: var(--sepia);
+  margin-bottom: 0.5rem;
+}
+
+.assignment-desc {
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  line-height: 1.7;
+}
+
+.assignment-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rust);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.assignment-link:hover { border-color: var(--rust); }
+
+/* ===== DISCUSSION PROMPTS ===== */
+.discussion {
+  background: rgba(45, 74, 62, 0.04);
+  border-left: 3px solid var(--deep-green);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.discussion-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--deep-green);
+  margin-bottom: 0.5rem;
+}
+
+.discussion p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* ===== EPIGRAPHS ===== */
+.epigraph {
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  max-width: 540px;
+}
+
+.epigraph-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--sepia);
+}
+
+.epigraph-source {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-top: 0.75rem;
+}
+
+/* ===== SCHEDULE TABLE ===== */
+.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.85rem;
+}
+
+.schedule th {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sepia);
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--rule);
+}
+
+.schedule td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+.schedule tr:hover { background: rgba(160, 82, 45, 0.03); }
+
+.week-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--rust);
+  font-weight: 400;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem clamp(1.5rem, 8vw, 6rem) 4rem;
+  border-top: 1px solid var(--rule);
+}
+
+.footer-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--sepia);
+  max-width: 500px;
+}
+
+/* ===== PROGRESS TRACKER ===== */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--rust);
+  z-index: 200;
+  transition: width 0.15s linear;
+}
+
+/* ===== CHECKLIST ===== */
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+}
+
+.checklist-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border: 1.5px solid var(--sepia);
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.checklist-item input[type="checkbox"]:checked {
+  background: var(--rust);
+  border-color: var(--rust);
+}
+
+.checklist-item input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: -1px;
+  left: 2px;
+  color: var(--cream);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.checklist-item input[type="checkbox"]:checked + label {
+  color: var(--sepia);
+  text-decoration: line-through;
+  text-decoration-color: var(--rule);
+}
+
+.checklist-item label {
+  font-size: 0.85rem;
+  color: var(--ink);
+  cursor: pointer;
+  line-height: 1.6;
+  transition: all 0.2s ease;
+}
+
+/* ===== FADE ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="nav">
+  <div class="nav-title">Founders' Syllabus</div>
+  <ul class="nav-links">
+    <li><a href="#m1">Origins</a></li>
+    <li><a href="#m2">The Play</a></li>
+    <li><a href="#m3">Business</a></li>
+    <li><a href="#m4">Producing</a></li>
+    <li><a href="#m5">Money</a></li>
+    <li><a href="#m6">Audience</a></li>
+    <li><a href="#m7">Chicago</a></li>
+    <li><a href="#m8">Leadership</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-overline">February 2026 — October 2027</div>
+  <h1>A Founders' Syllabus in <em>Building a Theatre Company</em></h1>
+  <p class="hero-desc">
+    A graduate-level self-directed education designed for two founders who know the art but need to rapidly master the business, the ecosystem, and the strategy. Eight modules. Twenty months. One opening night.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-item">Prepared for<span>Topher Rasmussen & Cassandra Stokes-Wylie</span></div>
+    <div class="meta-item">Duration<span>20 months (Feb '26 – Oct '27)</span></div>
+    <div class="meta-item">Format<span>Read / Watch / Listen / Do</span></div>
+  </div>
+</header>
+
+<!-- ===== MODULES ===== -->
+<div class="module-container">
+
+<!-- ============================================ -->
+<!-- MODULE 1: ORIGINS -->
+<!-- ============================================ -->
+<section class="module fade-in" id="m1">
+  <div class="module-number">Module 01</div>
+  <div class="module-title">How Theatre Companies Are Born</div>
+  <div class="module-subtitle">History, DNA, and the patterns of survival</div>
+  <p class="module-intro">
+    Before building anything, study what has survived and why. The companies that last share common traits: irrational commitment, artistic specificity, fiscal discipline, and the patience to build one audience member at a time. This module grounds your instincts in evidence.
+  </p>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">Steppenwolf Theatre Company of Chicago: In Their Own Words</div>
+    <div class="assignment-author">John Mayer — Methuen Drama, 2016</div>
+    <div class="assignment-desc">The definitive oral history of how nine actors in a church basement built one of the most important theatres in America. Essential for understanding ensemble culture, artistic identity, and the real economics of early-stage company building. Pay particular attention to how they handled the transition from amateur passion project to professional institution.</div>
+    <a href="https://www.amazon.com/Steppenwolf-Theatre-Company-Chicago-Makers/dp/1474239455" target="_blank" class="assignment-link">Find this book →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-watch">Watch</div>
+    <div class="assignment-title">American Theatre Wing: Working in the Theatre — Steppenwolf</div>
+    <div class="assignment-author">American Theatre Wing, 2015</div>
+    <div class="assignment-desc">Documentary featuring ensemble members discussing the founding mythology, the ensemble ethos, and what it means to build an artistic home. Pair with the book for a complete picture of Steppenwolf's DNA — the recklessness, the commitment, the work.</div>
+    <a href="https://americantheatrewing.org/working-in-the-theatre/steppenwolf/" target="_blank" class="assignment-link">Watch free →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-listen">Listen</div>
+    <div class="assignment-title">From the Ground Up — Lookingglass Theatre Company (David Catlin)</div>
+    <div class="assignment-author">Jeffrey Mosser / HowlRound Theatre Commons</div>
+    <div class="assignment-desc">David Catlin, founder and former artistic director of Lookingglass, discusses building an ensemble company in Chicago — shared leadership, board tension as a productive force, and how funders in Chicago actively seek out small companies doing remarkable work. Critical intelligence for your specific context.</div>
+    <a href="https://howlround.com/series/ground-podcast" target="_blank" class="assignment-link">Listen on HowlRound →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-listen">Listen</div>
+    <div class="assignment-title">From the Ground Up — Strawdog Theatre Company (Michaela Petro)</div>
+    <div class="assignment-author">Jeffrey Mosser / HowlRound Theatre Commons</div>
+    <div class="assignment-desc">A Chicago storefront company's perspective on ensemble membership, artistic culture, and what it means to build from the inside. Strawdog is the scale you're starting at. Their lessons are immediately applicable.</div>
+    <a href="https://howlround.com/invited-be-family-michaela-petro-strawdog-theatre-company" target="_blank" class="assignment-link">Listen on HowlRound →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-listen">Listen</div>
+    <div class="assignment-title">From the Ground Up — Free Street Theater (Coya Paz), Chicago</div>
+    <div class="assignment-author">Jeffrey Mosser / HowlRound Theatre Commons</div>
+    <div class="assignment-desc">Coya Paz co-founded Teatro Luna in Chicago in 2000, then moved to Free Street. Candid about the precarity of foundation funding, the ethics of community-centered pricing, and what it means to build a company that serves people with no disposable income. A necessary counterpoint to funding-first thinking.</div>
+    <a href="https://howlround.com/putting-value-work-and-putting-work-community-coya-paz-and-free-street-theater" target="_blank" class="assignment-link">Listen on HowlRound →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">How to Start Your Own Theater Company</div>
+    <div class="assignment-author">Reginald Nelson — Chicago Review Press, 2010</div>
+    <div class="assignment-desc">Written from inside Chicago's Congo Square Theatre Company, this is the most practically grounded founding guide available. Chronicles three actual seasons, covering tax status, budgeting, Equity negotiations, day jobs, and the unglamorous realities that get overlooked. Chicago-specific. Read with a highlighter.</div>
+    <a href="https://www.amazon.com/How-Start-Your-Theater-Company/dp/1556528132" target="_blank" class="assignment-link">Find this book →</a>
+  </div>
+
+  <div class="discussion">
+    <div class="discussion-label">Founders' Discussion</div>
+    <p>What is the single artistic conviction that makes us not a smaller version of an existing company, but something that can only exist as itself? Write it in one paragraph. If you can't, keep talking until you can.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- MODULE 2: THE PLAY -->
+<!-- ============================================ -->
+<section class="module fade-in" id="m2">
+  <div class="module-number">Module 02</div>
+  <div class="module-title">Inside <em>The Thin Place</em></div>
+  <div class="module-subtitle">The playwright, the text, the production history, the theatrical séance</div>
+  <p class="module-intro">
+    You must know this play more deeply than anyone who has ever produced it. Its origins, its influences, its production demands, its critical reception, and its relationship to Lucas Hnath's larger body of work. This module makes you the foremost authorities on why this play, why now, why you.
+  </p>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">The Thin Place — Script</div>
+    <div class="assignment-author">Lucas Hnath — Published by Concord Theatricals</div>
+    <div class="assignment-desc">Read it three times. First for story. Second for structure — how Hnath moves from monologue to dialogue to ensemble scene to the dark sequence. Third for production: what does the play actually need in terms of space, light, sound, and performer-audience relationship? The house lights are up for most of the play. That's a design choice that is also a philosophical choice. Understand why.</div>
+    <a href="https://www.concordtheatricals.com" target="_blank" class="assignment-link">Order from Concord Theatricals →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">Artist Interview: Lucas Hnath on The Thin Place</div>
+    <div class="assignment-author">Tim Sanford / Playwrights Horizons</div>
+    <div class="assignment-desc">Extended conversation between Hnath and former Playwrights Horizons Artistic Director Tim Sanford. Hnath discusses his process of building the play from actor improvisations at New Dramatists, the influence of Wallace Shawn's "Aunt Dan and Lemon," and his interest in the thin place between belief and skepticism. Essential for understanding directorial and dramaturgical approach.</div>
+    <a href="https://www.playwrightshorizons.org/watch-listen/artist-interview-lucas-hnath" target="_blank" class="assignment-link">Read the interview →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">Humana Festival Program Notes — The Thin Place</div>
+    <div class="assignment-author">Actors Theatre of Louisville / Issuu</div>
+    <div class="assignment-desc">The world premiere context at the 2019 Humana Festival. Hnath describes how he developed the play through workshops where he asked actors to share their personal experiences with psychics and the paranormal. Contains his research into the Spiritualist movement and the question that drives the play: "Can you have such an open mind that your brain falls out?"</div>
+    <a href="https://issuu.com/actorstheatreoflouisvillelimelightn/docs/humana_festival_limelight_2019__onl/s/79511" target="_blank" class="assignment-link">Read on Issuu →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">Read the Major Reviews: NYT, Variety, New York Stage Review, Exeunt</div>
+    <div class="assignment-author">Multiple critics, December 2019</div>
+    <div class="assignment-desc">Study what critics praised (the coup de théâtre with the lights, McDonnell's performance, the suspense architecture) and what they found wanting (pacing, the party scene digression, the ending). Every critique is a production note for you. The play's perceived weaknesses are directorial opportunities.</div>
+    <a href="https://playbill.com/article/what-do-critics-think-of-lucas-hnaths-the-thin-place-at-playwrights-horizons" target="_blank" class="assignment-link">Playbill review roundup →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-study">Study</div>
+    <div class="assignment-title">Companion Plays: Hnath's Body of Work</div>
+    <div class="assignment-author">Lucas Hnath</div>
+    <div class="assignment-desc">Read "The Christians" (the closest thematic sibling — faith, doubt, a community torn apart by intellectual honesty) and "A Doll's House, Part 2" (Hnath's structural audacity, his relationship to theatrical form). Read "Death Tax" (his first Humana premiere, a brutality he carries into The Thin Place). Also read Wallace Shawn's "Aunt Dan and Lemon" — the play Hnath cites as his model for theatrical horror.</div>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-study">Study</div>
+    <div class="assignment-title">Steve Cuiffo's Illusion Design</div>
+    <div class="assignment-author">Research assignment</div>
+    <div class="assignment-desc">The original production used illusion design by Steve Cuiffo, a professional magician and theatre artist. Your license may require use of the original design. Research Cuiffo's work, contact Concord Theatricals about design requirements, and study how magic and mentalism techniques function as theatrical storytelling. This is potentially the single most important production element.</div>
+  </div>
+
+  <div class="discussion">
+    <div class="discussion-label">Founders' Discussion</div>
+    <p>Hnath says he "leaves holes and lets Hilda, and/or the audience, fill in the gaps." In a 99-seat storefront where the audience is three feet from the performers, what does that intimacy do to this play that a 200-seat house at Playwrights Horizons cannot? Write your production concept in two pages.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- MODULE 3: BUSINESS FORMATION -->
+<!-- ============================================ -->
+<section class="module fade-in" id="m3">
+  <div class="module-number">Module 03</div>
+  <div class="module-title">Building the Organization</div>
+  <div class="module-subtitle">Legal structure, governance, and the machinery of a nonprofit</div>
+  <p class="module-intro">
+    This is the module that separates theatre artists who dream from theatre artists who produce. You need to understand nonprofit law, board governance, fiscal sponsorship mechanics, and insurance — not at expert level, but well enough to make informed decisions and ask the right questions.
+  </p>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">From the Top: Starting Your Own Nonprofit Theater Company</div>
+    <div class="assignment-author">Eric Schoen, 2020</div>
+    <div class="assignment-desc">Step-by-step framework covering incorporation, tax exemption, board formation, and the milestones you need to hit in sequence. Practical, template-heavy, written for people who don't have arts administration degrees. Use it as your implementation checklist.</div>
+    <a href="https://www.amazon.com/Top-Starting-Nonprofit-Theater-Company/dp/B089M2J2NB" target="_blank" class="assignment-link">Find this book →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-listen">Listen</div>
+    <div class="assignment-title">From the Ground Up — Fractured Atlas and Fiscal Sponsorship</div>
+    <div class="assignment-author">Colleen Hughes / HowlRound Theatre Commons</div>
+    <div class="assignment-desc">Colleen Hughes, associate director at Fractured Atlas, walks through what fiscal sponsorship actually does, fundraising trends through the pandemic era, and how small arts organizations can leverage this structure before incorporating independently. Directly relevant to your Phase 0 timeline.</div>
+    <a href="https://howlround.com/series/ground-podcast" target="_blank" class="assignment-link">Find in the From the Ground Up archive →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Apply to Fractured Atlas</div>
+    <div class="assignment-author">Action item — target completion: March 2026</div>
+    <div class="assignment-desc">Don't just study this. Do it. Apply for Model C fiscal sponsorship through Fractured Atlas ($129/year, 8% admin fee). This gives you the ability to accept tax-deductible donations within two weeks. It's the single highest-leverage action you can take in the first 30 days.</div>
+    <a href="https://www.fracturedatlas.org" target="_blank" class="assignment-link">Apply at Fractured Atlas →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-study">Study</div>
+    <div class="assignment-title">Illinois Nonprofit Incorporation — Primary Sources</div>
+    <div class="assignment-author">IL Secretary of State / IRS</div>
+    <div class="assignment-desc">Read the actual forms you'll file: Illinois Form NFP 102.10 (Articles of Incorporation, $50), IRS Form 1023-EZ ($275, for orgs under $50K gross receipts), and the IL Attorney General Charitable Trusts Bureau registration. Don't delegate understanding of these documents. You need to know what you're signing and why.</div>
+    <a href="https://www.cyberdriveillinois.com/departments/business_services/not_for_profit.html" target="_blank" class="assignment-link">IL Secretary of State →</a>
+  </div>
+
+  <div class="discussion">
+    <div class="discussion-label">Founders' Discussion</div>
+    <p>You need a board of at least three. Who are the first three people you'd call — not because they have money, but because they have judgment, time, and genuine investment in what you're building? Make a list of ten candidates. Narrow to five. Approach three.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- MODULE 4: PRODUCING -->
+<!-- ============================================ -->
+<section class="module fade-in" id="m4">
+  <div class="module-number">Module 04</div>
+  <div class="module-title">The Art of Producing</div>
+  <div class="module-subtitle">Equity contracts, licensing, venue relationships, and production management</div>
+  <p class="module-intro">
+    Cassie has managed contracts and seasons at SLAC. Topher has produced and directed. But producing as the organization — as the entity that bears the legal and financial risk — requires a different kind of mastery. This module fills the gap between "I've worked in theatre" and "I run a theatre."
+  </p>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">Stage Money: The Business of the Professional Theater</div>
+    <div class="assignment-author">Tim Donahue & Jim Patterson — USC Press</div>
+    <div class="assignment-desc">The most rigorous breakdown of theatrical economics available. Covers budgeting, union contracts, ticket pricing, marketing, and the relationship between commercial and nonprofit sectors. Data-driven, chart-heavy, and unsentimental about the financial realities. Read the chapters on budgeting and nonprofit producing three times.</div>
+    <a href="https://www.amazon.com/Stage-Money-Business-Professional-Theater/dp/1570039070" target="_blank" class="assignment-link">Find this book →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">Open Book Theatre Management</div>
+    <div class="assignment-author">Rafe Beckley — Zer0 Books</div>
+    <div class="assignment-desc">Written for low- and no-budget producers who still want to operate ethically. Covers profit-share models, transparent budgeting, cashflow management, and the core principle: you have to make money on your first show to get a second show. The most relevant financial philosophy for where you're starting.</div>
+    <a href="https://www.collectiveinkbooks.com/zer0-books/our-books/open-book-theater-management" target="_blank" class="assignment-link">Find this book →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Call AEA Central Regional Office</div>
+    <div class="assignment-author">Action item — target completion: first 30 days</div>
+    <div class="assignment-desc">312-641-0393. 557 W Randolph Street, Chicago. This is the single most time-sensitive action item. You must resolve: (1) Can Cassie as an AEA member co-found and produce a company in which she also performs? (2) What are the specific provisions of the CAT Agreement entry tier for a 99-seat house? (3) What documentation is required to register a 29-Hour Staged Reading? Do not proceed past this module until this call is made and the answers are documented in writing.</div>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-study">Study</div>
+    <div class="assignment-title">Actors' Equity — CAT Agreement and 29-Hour Reading Code</div>
+    <div class="assignment-author">Actors' Equity Association</div>
+    <div class="assignment-desc">Study both documents in full. The CAT Agreement was renegotiated in March 2024 (new 4-year term). The 29-Hour Code governs your October 2026 reading: max 29 hours over 14 days, max 3 presentations, invited audience only, no admission, no critics, no recording. Violations can result in Equity sanctions that would cripple you before you start.</div>
+    <a href="https://www.actorsequity.org" target="_blank" class="assignment-link">Actors' Equity Association →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Submit Licensing Inquiry to Concord Theatricals</div>
+    <div class="assignment-author">Action item — target completion: March 2026</div>
+    <div class="assignment-desc">Email licensing@concordtheatricals.com. Inquire about: (1) Reading license for October 2026, (2) Full production license for October 2027, (3) Estimated royalty rates for both amateur and professional classifications, (4) Requirements regarding Steve Cuiffo's original illusion design. Be professional. Include your credentials. First impressions with licensors matter.</div>
+  </div>
+
+  <div class="discussion">
+    <div class="discussion-label">Founders' Discussion</div>
+    <p>If Equity says Cassie cannot perform in a company she co-produces under the CAT Agreement, what is Plan B? Discuss three scenarios: she performs non-Equity for the first production, she steps back from performing and directs, or you produce the first show entirely non-Equity. Have this conversation before you make the call.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- MODULE 5: MONEY -->
+<!-- ============================================ -->
+<section class="module fade-in" id="m5">
+  <div class="module-number">Module 05</div>
+  <div class="module-title">Revenue, Fundraising, and Financial Survival</div>
+  <div class="module-subtitle">How to fund the work without losing your soul</div>
+
+  <div class="epigraph">
+    <div class="epigraph-text">"You have to make money first and art second, because if you make money on your first show you are far more likely to be able to stage the second."</div>
+    <div class="epigraph-source">Rafe Beckley, Open Book Theatre Management</div>
+  </div>
+
+  <p class="module-intro">
+    You've already decided to reject dependence on institutional philanthropy. Good. That decision shapes everything. This module equips you to build a revenue model centered on earned income — ticket sales, micropatronage, and strategic self-sufficiency — while understanding enough about grants and donors to use them when they serve the mission rather than distort it.
+  </p>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">Entrepreneurial Arts and Cultural Leadership</div>
+    <div class="assignment-author">Bonnie Fogel & Brett Ashley Crawford — Intellect Books, 2025</div>
+    <div class="assignment-desc">Brand new, co-authored by a Carnegie Mellon arts management professor and the founder of Imagination Stage. Real-world strategies for developing an entrepreneurial mindset in nonprofit arts. Covers financial instability navigation, sustainable business models, and what "entrepreneurial" actually means when your product is art. The most current thinking available.</div>
+    <a href="https://www.amazon.com/Entrepreneurial-Arts-Cultural-Leadership-Nonprofit/dp/1835951228" target="_blank" class="assignment-link">Find this book →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-listen">Listen</div>
+    <div class="assignment-title">From the Ground Up — Philanthropies, Foundations, & Boards</div>
+    <div class="assignment-author">Ben Cameron / HowlRound Theatre Commons, Season 3</div>
+    <div class="assignment-desc">Ben Cameron has seen arts funding from every angle — TED Talks to Theatre Communications Group. Post-pandemic, funders have shifted their giving models. This episode covers how ensemble companies fit into the current funding ecosystem and where the money is actually moving. Critical for calibrating your expectations.</div>
+    <a href="https://howlround.com/series/ground-podcast" target="_blank" class="assignment-link">Listen on HowlRound →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-listen">Listen</div>
+    <div class="assignment-title">CI to Eye Podcast — Capacity Interactive</div>
+    <div class="assignment-author">Erik Gensler, Priya Iyer / Capacity Interactive</div>
+    <div class="assignment-desc">Digital marketing consulting firm for the arts. Their podcast covers audience development, digital strategy, pricing psychology, and how arts organizations can leverage technology to punch above their weight class. Topher — you will understand this material faster than most because of your communications background. Cherry-pick the episodes on pricing strategy, email marketing, and audience segmentation.</div>
+    <a href="https://capacityinteractive.com/ci-to-eye/" target="_blank" class="assignment-link">Browse episodes →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Build Your First Production Budget</div>
+    <div class="assignment-author">Action item — by May 2026</div>
+    <div class="assignment-desc">Using the financial models from the founding memorandum as a baseline, build three scenarios: lean ($18K), moderate ($28K), and ambitious ($40K). Identify the go/no-go fundraising threshold — the number below which you do not proceed with the October 2027 production. This decision should be made jointly, documented, and not revisited under pressure.</div>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Write the Founding Circle Prospectus</div>
+    <div class="assignment-author">Action item — by January 2027</div>
+    <div class="assignment-desc">A two-page document that makes the case for private investment in your company. Not a grant application. Not a plea for charity. A clear, confident articulation of what you're building, what it costs, what the investor receives (naming recognition, exclusive access, first tickets), and why this specific project deserves their money. Topher writes the first draft. Cassie edits for emotional truth. Send to 50-100 contacts in your SLC and Chicago networks.</div>
+  </div>
+
+  <div class="discussion">
+    <div class="discussion-label">Founders' Discussion</div>
+    <p>How much of your own money can you commit? What is the number that doesn't cause financial stress in your household? Be honest. Write it down. That number is the floor of Phase 1. Everything above it is what you need to raise.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- MODULE 6: AUDIENCE -->
+<!-- ============================================ -->
+<section class="module fade-in" id="m6">
+  <div class="module-number">Module 06</div>
+  <div class="module-title">Building an Audience from Zero</div>
+  <div class="module-subtitle">Marketing, press, identity, and the long game of trust</div>
+  <p class="module-intro">
+    You have no audience. You have no mailing list. You have no critical track record in Chicago. This is actually an advantage: you get to build your audience relationship from scratch with no legacy baggage. But it requires a deliberate strategy that most theatre companies never think through.
+  </p>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">Building the Successful Theater Company</div>
+    <div class="assignment-author">Lisa Mulcahy — Allworth Press</div>
+    <div class="assignment-desc">Interviews with leaders from 19 theatre companies on funding, social media, corporate sponsors, and artistic collaborations. The social media and audience-building chapters are particularly relevant for a company starting from zero brand recognition in a new city.</div>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-study">Study</div>
+    <div class="assignment-title">Rescripted (Formerly Chicago Theatre Review)</div>
+    <div class="assignment-author">rescripted.org</div>
+    <div class="assignment-desc">The most comprehensive coverage of Chicago storefront theatre. Read it weekly for the next 20 months. Study what companies get covered, how they're described, what critics respond to. Identify which critics review work most similar to what you want to make. These are the relationships you'll need for October 2027 press outreach.</div>
+    <a href="https://rescripted.org" target="_blank" class="assignment-link">Bookmark Rescripted →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-study">Study</div>
+    <div class="assignment-title">Chicago Reader — Theatre Section</div>
+    <div class="assignment-author">chicagoreader.com</div>
+    <div class="assignment-desc">The Reader covers Chicago's independent arts scene with depth and cultural context that the Tribune often can't match. Its theatre coverage tends to champion the scrappy, the experimental, the politically engaged. Study their feature profiles of emerging companies — the narrative structure of those pieces is the template for how you want to be written about.</div>
+    <a href="https://chicagoreader.com/arts-culture/theater/" target="_blank" class="assignment-link">Bookmark the Reader →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Build the Brand Identity</div>
+    <div class="assignment-author">Action item — by June 2026</div>
+    <div class="assignment-desc">Topher handles this in-house. Company name, domain, logo, social media handles, and a single-page website. The website needs only five things: who you are, what you believe, what you're making, when, and how to get on the mailing list. Every person you meet between now and October 2026 should receive a card or a URL. Start collecting email addresses the day the site goes live. That list is your most valuable asset.</div>
+  </div>
+
+  <div class="discussion">
+    <div class="discussion-label">Founders' Discussion</div>
+    <p>The Thin Place is a 90-minute theatrical séance about a psychic medium. In a 99-seat storefront theatre. In October. How do you market that to people who have never heard of Lucas Hnath and have never heard of you? Write five sentences that would make a stranger buy a ticket.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- MODULE 7: CHICAGO -->
+<!-- ============================================ -->
+<section class="module fade-in" id="m7">
+  <div class="module-number">Module 07</div>
+  <div class="module-title">Know Your City</div>
+  <div class="module-subtitle">The Chicago theatre ecosystem, venues, institutions, and community</div>
+  <p class="module-intro">
+    Chicago's theatre community is simultaneously the most welcoming and the most demanding in the country. People will help you — but only if you show up, do the work, and demonstrate that you're here to contribute, not extract. This module is about becoming part of the city before you ask the city to come see your show.
+  </p>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Join the League of Chicago Theatres</div>
+    <div class="assignment-author">Action item — immediately</div>
+    <div class="assignment-desc">$150/year for companies with budgets under $25K. Membership gives you ChicagoPlays.com listing, Hot Tix access, cooperative advertising, professional development, and most importantly: a directory of every theatre professional in the city. Attend their workshops, mixers, and events. This is where you meet the people who run the spaces, review the shows, fund the work, and cast the plays.</div>
+    <a href="https://chicagoplays.com" target="_blank" class="assignment-link">League of Chicago Theatres →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-visit">Visit</div>
+    <div class="assignment-title">See Shows at Your Target Venues</div>
+    <div class="assignment-author">Ongoing — minimum 2 shows/month starting now</div>
+    <div class="assignment-desc">See a show at Theatre Wit, Bramble Arts Loft, and The Den Theatre within 60 days. Don't just watch the play — study the space. How does the audience enter? What's the lobby like? How does the seating configuration work? Where do you put the box office? Where do you hang the lights? Talk to the house manager. Introduce yourself to the artistic director after the show. Be a genuine audience member first. Be a potential renter second.</div>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-visit">Visit</div>
+    <div class="assignment-title">The Broader Storefront Landscape</div>
+    <div class="assignment-author">Ongoing</div>
+    <div class="assignment-desc">See work at Steep Theatre, A Red Orchid, Interrobang, Raven Theatre, Strawdog, Steep, Gift Theatre, and any company producing in the 50-to-100 seat range. These are your peers. These are the companies whose audiences overlap with yours. Note what's working: how do they handle pre-show? Intermission? Post-show? Concessions? Community? These details are the difference between professional and amateur.</div>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Contact Theatre Wit About the Shared Spaces Program</div>
+    <div class="assignment-author">Action item — by April 2026</div>
+    <div class="assignment-desc">Theatre Wit received a $600,000 grant from the Paul M. Angell Family Foundation specifically to subsidize rental rates for small companies — from $2,250/week to $1,000/week. This program includes marketing assistance, production guidance, and accessibility services. Contact Jeremy Wechsler, Artistic Director. This venue should be your primary target for the October 2027 production.</div>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Activate Your Bridge Network</div>
+    <div class="assignment-author">Action item — by March 2026</div>
+    <div class="assignment-desc">Email Jerry Rapier at Plan-B Theatre and ask for 30 minutes of his time. Email Shannon Musgrave at Carnegie Mellon. Reach out to every SLC collaborator who might have a Chicago connection. Each of these conversations is a potential introduction to the people you need to meet. Don't wait. These conversations should begin now.</div>
+  </div>
+
+  <div class="discussion">
+    <div class="discussion-label">Founders' Discussion</div>
+    <p>After seeing ten shows in Chicago over the next three months: What is the gap? What is the kind of work that nobody is doing that you believe audiences would respond to? Not in theory — based on what you've actually witnessed.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- MODULE 8: LEADERSHIP -->
+<!-- ============================================ -->
+<section class="module fade-in" id="m8">
+  <div class="module-number">Module 08</div>
+  <div class="module-title">Founder Psychology and the Long Game</div>
+  <div class="module-subtitle">Burnout, co-founder dynamics, artistic integrity, and the 10-year vision</div>
+
+  <div class="epigraph">
+    <div class="epigraph-text">"The great thing about Steppenwolf is that you keep coming back to do quality work and I think that's one of the major reasons people keep coming back."</div>
+    <div class="epigraph-source">Tarell Alvin McCraney, Steppenwolf Ensemble</div>
+  </div>
+
+  <p class="module-intro">
+    The hardest part of founding a theatre company is not the first show. It's the third year. It's the Tuesday night when the house is at 30% and you've spent all weekend painting the set and you have work at your day job in seven hours. This module is about sustaining the humans at the center of the enterprise — which means you.
+  </p>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">Theatre Management: Arts Leadership for the 21st Century</div>
+    <div class="assignment-author">Anthony Rhine — Allworth Press, 2019</div>
+    <div class="assignment-desc">Comprehensive textbook covering the full spectrum of arts organizational leadership: mission development, stakeholder communication, governance, marketing, fund development, and community engagement. Dense but worth it. Read selectively — focus on the chapters about organizational culture, mission articulation, and managing through growth transitions.</div>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-listen">Listen</div>
+    <div class="assignment-title">From the Ground Up — Season 3 (Full Season)</div>
+    <div class="assignment-author">Jeffrey Mosser / HowlRound Theatre Commons</div>
+    <div class="assignment-desc">The entire third season is a masterclass in ensemble sustainability. Episodes on touring economics, rural practice, funding models, boards, philanthropy, and the history of ensemble-based theatre in America. The Ben Cameron episode on post-pandemic funding shifts and the Bob Leonard episode on the history of the ensemble movement are essential. Listen to the full season over the course of a month.</div>
+    <a href="https://podcasts.apple.com/us/podcast/from-the-ground-up/id1674920724" target="_blank" class="assignment-link">Subscribe on Apple Podcasts →</a>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Write a Co-Founder Agreement</div>
+    <div class="assignment-author">Action item — by April 2026</div>
+    <div class="assignment-desc">Before you incorporate: write down who does what. Who is the artistic director? Who is the managing director? Who makes final casting decisions? Who signs the checks? What happens if one founder wants to leave? What happens if you disagree about a play? Every successful co-founder relationship has answers to these questions before they need them. Put it in writing. It protects the company and it protects the marriage.</div>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-do">Do</div>
+    <div class="assignment-title">Define the 10-Year Vision</div>
+    <div class="assignment-author">Action item — by June 2026</div>
+    <div class="assignment-desc">The Thin Place is your first production, not your mission. What kind of company do you want to be in 2037? What does the season look like? How many shows? What size audience? What relationship to new work, to published plays, to the Chicago community? Write a 1-page vision document that you revisit every six months. It will change — that's the point. But you need a compass or you'll wander.</div>
+  </div>
+
+  <div class="assignment">
+    <div class="assignment-type type-read">Read</div>
+    <div class="assignment-title">Outrageous Fortune: The Life and Times of the New American Play</div>
+    <div class="assignment-author">Todd London with Ben Pesner & Zannie Voss — TCG, 2009</div>
+    <div class="assignment-desc">The most honest accounting of the American theatre's economic and artistic ecosystem ever published. Based on a Theatre Development Fund study surveying hundreds of playwrights, artistic directors, and literary managers. Not a how-to — a mirror. Read it to understand the system you're entering and the pressures that will try to shape you.</div>
+  </div>
+
+  <div class="discussion">
+    <div class="discussion-label">Founders' Discussion</div>
+    <p>It's October 28, 2027. Closing night. You're striking the set at midnight. The run went well — not perfectly, but well. What does success feel like? Not in numbers. In your body. In your relationship. In the knowledge that's been built. Write it down separately, then read each other's versions aloud.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SCHEDULE -->
+<!-- ============================================ -->
+<section class="module fade-in" id="schedule">
+  <div class="module-number">Implementation</div>
+  <div class="module-title">20-Month Reading & Action Schedule</div>
+  <div class="module-subtitle">Suggested pacing — adjust to your lives</div>
+
+  <table class="schedule">
+    <thead>
+      <tr>
+        <th>When</th>
+        <th>Module Focus</th>
+        <th>Key Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="week-num">Feb–Mar '26</span></td>
+        <td>Modules 1 & 3: Origins + Organization</td>
+        <td>Read Nelson book. Apply Fractured Atlas. Call AEA. Email Concord. Join League.</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">Apr–May '26</span></td>
+        <td>Modules 2 & 4: The Play + Producing</td>
+        <td>Read script 3x. Read Stage Money. Study Equity contracts. Visit target venues.</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">Jun–Jul '26</span></td>
+        <td>Module 6: Audience Building</td>
+        <td>Build brand. Launch website. Start mailing list. Co-founder agreement. 10-year vision.</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">Aug–Sep '26</span></td>
+        <td>Module 7: Chicago Ecosystem</td>
+        <td>Secure reading venue. Cast reading. Register with AEA. Curate invite list.</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">Oct '26</span></td>
+        <td>THE READING</td>
+        <td>Execute. Document. Collect contacts. Host reception. Debrief.</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">Nov–Dec '26</span></td>
+        <td>Module 3 (cont): Incorporation</td>
+        <td>File 501(c)(3). Recruit board. Write Founding Circle prospectus.</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">Jan–Mar '27</span></td>
+        <td>Module 5: Revenue & Fundraising</td>
+        <td>Read entrepreneurial leadership. Launch Founding Circle. Secure production license.</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">Apr–Jun '27</span></td>
+        <td>Module 4 (cont): Production Planning</td>
+        <td>Confirm venue. Hire director/designers. Crowdfunding launch. Auditions.</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">Jul–Sep '27</span></td>
+        <td>Module 8: Leadership + Rehearsal</td>
+        <td>Rehearsals. Press outreach. Read Outrageous Fortune. Protect your energy.</td>
+      </tr>
+      <tr>
+        <td><span class="week-num">Oct '27</span></td>
+        <td>OPENING NIGHT</td>
+        <td>Tech. Previews. Opening. Run. Closing. Debrief. Begin planning show two.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================ -->
+<!-- MASTER CHECKLIST -->
+<!-- ============================================ -->
+<section class="module fade-in" id="checklist">
+  <div class="module-number">Appendix</div>
+  <div class="module-title">Master Reading List</div>
+  <div class="module-subtitle">Check them off as you go</div>
+
+  <div style="margin-top: 1.5rem;">
+    <p style="font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sepia); margin-bottom: 1rem;">Books</p>
+
+    <div class="checklist-item"><input type="checkbox" id="c1"><label for="c1">Steppenwolf Theatre Company of Chicago: In Their Own Words — John Mayer</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c2"><label for="c2">How to Start Your Own Theater Company — Reginald Nelson</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c3"><label for="c3">From the Top: Starting Your Own Nonprofit Theater Company — Eric Schoen</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c4"><label for="c4">Stage Money: The Business of the Professional Theater — Donahue & Patterson</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c5"><label for="c5">Open Book Theatre Management — Rafe Beckley</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c6"><label for="c6">Entrepreneurial Arts and Cultural Leadership — Fogel & Crawford (2025)</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c7"><label for="c7">Building the Successful Theater Company — Lisa Mulcahy</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c8"><label for="c8">Theatre Management: Arts Leadership for the 21st Century — Anthony Rhine</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c9"><label for="c9">Outrageous Fortune — Todd London</label></div>
+
+    <p style="font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sepia); margin: 1.5rem 0 1rem;">Scripts</p>
+
+    <div class="checklist-item"><input type="checkbox" id="c10"><label for="c10">The Thin Place — Lucas Hnath (read 3x)</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c11"><label for="c11">The Christians — Lucas Hnath</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c12"><label for="c12">A Doll's House, Part 2 — Lucas Hnath</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c13"><label for="c13">Death Tax — Lucas Hnath</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c14"><label for="c14">Aunt Dan and Lemon — Wallace Shawn</label></div>
+
+    <p style="font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sepia); margin: 1.5rem 0 1rem;">Podcast Series</p>
+
+    <div class="checklist-item"><input type="checkbox" id="c15"><label for="c15">From the Ground Up — Full Season 3 (HowlRound)</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c16"><label for="c16">From the Ground Up — Lookingglass / David Catlin episode</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c17"><label for="c17">From the Ground Up — Strawdog / Michaela Petro episode</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c18"><label for="c18">From the Ground Up — Free Street Theater / Coya Paz episode</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c19"><label for="c19">From the Ground Up — Fractured Atlas / Colleen Hughes episode</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c20"><label for="c20">From the Ground Up — Ben Cameron on funding shifts</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c21"><label for="c21">CI to Eye — pricing strategy and audience development episodes</label></div>
+
+    <p style="font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sepia); margin: 1.5rem 0 1rem;">Video & Documentary</p>
+
+    <div class="checklist-item"><input type="checkbox" id="c22"><label for="c22">American Theatre Wing: Working in the Theatre — Steppenwolf (2015)</label></div>
+
+    <p style="font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sepia); margin: 1.5rem 0 1rem;">Ongoing Reading</p>
+
+    <div class="checklist-item"><input type="checkbox" id="c23"><label for="c23">Rescripted — weekly reading, ongoing</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c24"><label for="c24">Chicago Reader Theatre Section — weekly reading, ongoing</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c25"><label for="c25">HowlRound Theatre Commons — essays and features, ongoing</label></div>
+
+    <p style="font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sepia); margin: 1.5rem 0 1rem;">Primary Sources & Research</p>
+
+    <div class="checklist-item"><input type="checkbox" id="c26"><label for="c26">Hnath interview at Playwrights Horizons</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c27"><label for="c27">Humana Festival program notes (Issuu)</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c28"><label for="c28">Critical review roundup (NYT, Variety, NYSR, Exeunt)</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c29"><label for="c29">AEA CAT Agreement — full document</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c30"><label for="c30">AEA 29-Hour Reading Code — full document</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c31"><label for="c31">IL Form NFP 102.10 (Articles of Incorporation)</label></div>
+    <div class="checklist-item"><input type="checkbox" id="c32"><label for="c32">IRS Form 1023-EZ</label></div>
+  </div>
+</section>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <p class="footer-text">
+    "There's a subject that I want to explore, and I'll get actors together in a room. I'll have written scraps of moments, exchanges, bits of dialogue — but I won't have the whole play yet, not by a long shot."
+  </p>
+  <div class="epigraph-source" style="margin-top: 0.75rem;">Lucas Hnath on his process — you're in the same place with this company. The whole play isn't written yet. Start gathering the actors.</div>
+</div>
+
+<script>
+// Scroll progress
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById('progressBar').style.width = (scrollTop / scrollHeight * 100) + '%';
+});
+
+// Fade in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Persist checkbox state
+document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(cb => {
+  const saved = localStorage.getItem('syllabus_' + cb.id);
+  if (saved === 'true') cb.checked = true;
+  cb.addEventListener('change', () => {
+    localStorage.setItem('syllabus_' + cb.id, cb.checked);
+  });
+});
+</script>
+
+</body>
+</html>
