@@ -103,11 +103,15 @@ A 90-minute, one-act play with 4 characters. A woman named Hilda tells the audie
 
 ## Organizational Structure
 
-### Recommended Path
+### Recommended Path: LLC + Fractured Atlas
 
-**Phase 1 (now through October 2026)**: Operate under **Fractured Atlas fiscal sponsorship** (Model C pre-approved grant structure). $129/year membership, 8% admin fee on donations, approval in ~2 weeks. Provides immediate ability to accept tax-deductible donations, run crowdfunding, and apply for certain grants. Low cost, low risk, fast.
+**Primary entity: Illinois LLC.** File Articles of Organization with the IL Secretary of State ($150), plus $75/year annual report. The LLC handles all earned revenue (ticket sales, workshops, consulting, events), enters into contracts (venues, Equity agreements, licensing), pays artists and vendors, and can distribute profits to the founders. No board of directors required. No public financial reporting. Operational within days. Research confirms the Equity CAT Agreement covers both commercial and nonprofit producing entities — no requirement that the company be a nonprofit.
 
-**Phase 2 (November 2026 – April 2027)**: Incorporate as an independent **Illinois 501(c)(3)** nonprofit. File IL Form NFP 102.10 ($50), then IRS Form 1023-EZ ($275, for orgs under $50K gross receipts). Register with IL Attorney General Charitable Trusts Bureau. Minimum 3 board members required. Timeline: 4-8 months from initiation to operational tax-exempt status.
+**Charitable channel: Fractured Atlas fiscal sponsorship.** $129/year membership, 8% admin fee on donations. Provides immediate ability to accept tax-deductible donations, run crowdfunding, and apply for certain grants that accept fiscally sponsored projects. Fractured Atlas explicitly supports projects whose legal entity is an LLC.
+
+**501(c)(3): Deferred.** Independent nonprofit incorporation is not recommended at this stage. The founders' philosophy of earned-revenue primacy and independence from grant dependency does not require nonprofit status. The primary advantage of a 501(c)(3) — direct grant eligibility — is not a priority. If the grant landscape justifies the overhead later, incorporate then. The LLC + Fractured Atlas model preserves this option while avoiding premature complexity.
+
+This dual-structure model is well-established: Manhattan Theatre Club operates a for-profit subsidiary alongside its nonprofit; many emerging companies nationally are choosing LLC or fiscal sponsorship models over the traditional nonprofit path. The American Bar Association has published guidance on dual-structure configurations. Illinois also offers the L3C (Low-Profit LLC) variant for entities with a charitable purpose — worth investigating as the company matures.
 
 ### The Equity Question — CRITICAL AND UNRESOLVED
 
@@ -224,15 +228,21 @@ Achievable with personal founder investment. No external fundraising strictly re
 | Moderate | 55% (44 seats) | 18 | $28 | $22,176 |
 | Optimistic | 70% (56 seats) | 20 | $30 | $33,600 |
 
-### Revenue Strategy (4 Tiers)
+### Revenue Strategy (6 Tiers)
 
-1. **Earned Revenue (target 60-75%)**: Ticket sales as primary engine. General admission $25-$35, one pay-what-you-can performance per week. Consider premium "séance experience" seats at $50-$75. Concessions/bar revenue if venue supports it.
+The LLC structure enables diversified revenue that generates income year-round — not just during production runs.
 
-2. **Private Investment & Micropatronage (target 20-30%)**: Founding Circle of 10-20 individuals at $250-$1,000 each. Crowdfunding via Fractured Atlas (tax-deductible). Personal outreach letter to 50-100 SLC and Chicago contacts. Frame as investment, not charity.
+1. **Production Revenue (target 40-60% of production-year budget)**: Ticket sales as primary engine. General admission $25-$35, one pay-what-you-can performance per week. Premium "séance experience" seats at $50-$75. Concessions/bar revenue if venue supports it.
 
-3. **Strategic Partnerships & In-Kind (target 5-15% cost reduction)**: Theatre Wit Shared Spaces subsidy. University programs (DePaul, Columbia, Northwestern) for crew. Designers building portfolios.
+2. **Programming Revenue (year-round through LLC)**: Curated reading series or salon events ($10-20 admission, $2K-8K/year if monthly). Workshops and classes — acting technique, audition prep, theatre business ($5K-15K/year). Experiential/themed events, especially October-season immersive experiences ($1.5K-9K/year).
 
-4. **Institutional Funding (long-term, post-first production)**: After first production establishes credibility with reviews, audience data, and financial statements — then pursue: Illinois Arts Council Agency, MacArthur Fund, Alphawood Foundation, Chicago Community Trust, Driehaus Foundation.
+3. **Professional Services (year-round through LLC)**: Topher: design, branding, web development for other Chicago theatre companies ($500-5,000/project). Cassie: grant writing, literary management consulting, arts administration for other companies ($50-100/hr). Chicago's 240+ League members are the market — most are understaffed. Potential: $12K-72K/year depending on capacity.
+
+4. **Private Investment & Micropatronage (target 15-25% of production budget)**: Founding Circle of 10-20 individuals at $250-$1,000 each. Crowdfunding via Fractured Atlas (tax-deductible). Personal outreach letter to 50-100 SLC and Chicago contacts. Frame as investment, not charity.
+
+5. **Strategic Partnerships & In-Kind (target 5-15% cost reduction)**: Theatre Wit Shared Spaces subsidy. University programs (DePaul, Columbia, Northwestern) for crew. Designers building portfolios.
+
+6. **Institutional Funding (long-term, optional)**: After first production establishes credibility — and only if 501(c)(3) incorporation is pursued — consider: Illinois Arts Council Agency, MacArthur Fund, Alphawood Foundation, Chicago Community Trust, Driehaus Foundation. The revenue model should not depend on this tier.
 
 ---
 
@@ -275,6 +285,9 @@ Achievable with personal founder investment. No external fundraising strictly re
 
 ### Phase 0: Foundation (February – May 2026)
 - [ ] Resolve Equity member-producer question (AEA Central, 312-641-0393)
+- [ ] Form Illinois LLC — file Articles of Organization ($150)
+- [ ] Draft and sign LLC operating agreement (roles, responsibilities, profit distribution)
+- [ ] Consult with a lawyer or accountant on LLC + Fractured Atlas structure ($150-300)
 - [ ] Apply for Fractured Atlas fiscal sponsorship
 - [ ] Choose company name, secure domain, social media handles
 - [ ] Build basic web presence (Topher in-house)
@@ -283,7 +296,7 @@ Achievable with personal founder investment. No external fundraising strictly re
 - [ ] Reach out to SLC network: Jerry Rapier, Shannon Musgrave, former collaborators
 - [ ] Join League of Chicago Theatres
 - [ ] Begin attending Chicago theatre — minimum 2 shows/month
-- [ ] Begin identifying potential board members
+- [ ] Begin identifying advisors and potential future board members
 
 ### Phase 1: The Reading (June – October 2026)
 - [ ] Secure venue for reading
@@ -294,13 +307,14 @@ Achievable with personal founder investment. No external fundraising strictly re
 - [ ] Execute reading, host reception, collect contacts
 - [ ] This is the company's debut — the impression here is the foundation for everything
 
-### Phase 2: Building the Organization (November 2026 – April 2027)
-- [ ] Incorporate as Illinois 501(c)(3)
-- [ ] Recruit and install board of directors (minimum 3)
-- [ ] Develop formal business plan and prospectus
-- [ ] Launch Founding Circle fundraising
+### Phase 2: Building the Organization & Revenue Base (November 2026 – April 2027)
+- [ ] Formalize LLC operating agreement and business plan
+- [ ] Launch recurring programming (reading series, workshops, or salon events)
+- [ ] Begin offering professional services to other Chicago companies through LLC
+- [ ] Develop Founding Circle prospectus and launch private fundraising
 - [ ] Apply for Concord Theatricals production license
 - [ ] Identify and hire director, designers, stage manager
+- [ ] Evaluate whether 501(c)(3) incorporation is warranted; defer unless clear advantage justifies overhead
 
 ### Phase 3: The Production (May – October 2027)
 - [ ] Confirm venue booking, finalize production calendar
@@ -317,7 +331,7 @@ Achievable with personal founder investment. No external fundraising strictly re
 
 These are not research questions — they require the two of you to sit down and decide:
 
-1. **Who is "we"?** Topher and Cassie exclusively, or others? Determines board composition, creative leadership, scope.
+1. **Who is "we"?** Topher and Cassie exclusively, or others? Determines LLC membership structure, creative leadership, scope.
 
 2. **Cassie's Equity status relative to this venture.** Must be resolved through direct AEA conversation. Everything else depends on this answer.
 
@@ -337,12 +351,16 @@ These are not research questions — they require the two of you to sit down and
 
 | Component | Low | High |
 |-----------|-----|------|
-| Organizational setup (Fractured Atlas, incorporation, League, insurance) | $854 | $1,354 |
+| LLC formation + annual report | $225 | $225 |
+| Fractured Atlas membership | $129 | $129 |
+| Legal/accounting consultation | $150 | $300 |
+| League of Chicago Theatres | $150 | $150 |
+| Domain, web hosting, insurance | $500 | $1,000 |
 | October 2026 reading | $1,501 | $3,369 |
 | October 2027 production | $18,203 | $45,082 |
-| **Total** | **$20,558** | **$49,805** |
+| **Total** | **$20,858** | **$50,255** |
 
-Realistic target: **$25,000 – $35,000** total across both phases, depending on Equity status and venue rental rate.
+Realistic target: **$25,000 – $35,000** total across both phases, depending on Equity status and venue rental rate. Note: the LLC structure saves approximately $325-650 in nonprofit filing fees versus the 501(c)(3) path, and eliminates the need for a formal board of directors.
 
 ---
 

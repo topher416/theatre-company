@@ -9,7 +9,8 @@ This repository contains the founding documents and digital artifacts for a prof
 | File | Description |
 |------|-------------|
 | `THEATRE-COMPANY-PROJECT-OVERVIEW.md` | Project bible — the primary context document for all planning |
-| `Founding_Memorandum_Theatre_Company.docx` | 30-page research memorandum (binary .docx — cannot be read directly by Claude Code) |
+| `Founding_Memorandum_Theatre_Company.docx` | 30-page research memorandum (binary .docx — original format) |
+| `Founding_Memorandum_Theatre_Company.md` | Same memorandum converted to markdown (editable, readable by Claude Code) |
 | `founders-syllabus.html` | 8-module self-directed education program — interactive HTML with checklist |
 | `the-thin-place-hype.html` | Cinematic motivational hype site for founders |
 
@@ -18,7 +19,7 @@ This repository contains the founding documents and digital artifacts for a prof
 - **Company name**: Not yet chosen (open decision)
 - **First play**: *The Thin Place* by Lucas Hnath (4 actors, 90 min, no intermission)
 - **Target venues**: Theatre Wit (primary), Bramble Arts Loft, The Den Theatre
-- **Organizational path**: Fractured Atlas fiscal sponsorship (Phase 1) then Illinois 501(c)(3) (Phase 2)
+- **Organizational path**: Illinois LLC (primary operating entity) + Fractured Atlas fiscal sponsorship (donation channel); 501(c)(3) deferred indefinitely unless grant landscape justifies it
 - **Critical unresolved question**: Cassie's AEA member-producer status — must be resolved via call to AEA Central Regional Office (312-641-0393) before other planning proceeds
 - **Budget range**: $20,558 – $49,805 total across both phases; realistic target $25K – $35K
 
@@ -37,7 +38,7 @@ This repository contains the founding documents and digital artifacts for a prof
 
 ## Working With This Project
 
-- The `.docx` file is binary and cannot be read by Claude Code. Reference `THEATRE-COMPANY-PROJECT-OVERVIEW.md` for the same strategic content in readable form.
+- The `.docx` file is binary. The `.md` version (`Founding_Memorandum_Theatre_Company.md`) is the editable, readable copy and should be treated as the canonical version going forward.
 - The two `.html` files are self-contained single-file web pages with inline CSS and JS. They can be opened directly in a browser.
 - When building new artifacts (website, pitch materials, tracking tools, etc.), Topher produces all design and digital work in-house.
 - The project overview document contains the full critical path checklist, financial models, venue research, Equity contract details, and Chicago ecosystem intelligence.
