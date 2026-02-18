@@ -11,6 +11,7 @@ This repository contains the founding documents and digital artifacts for a prof
 | `THEATRE-COMPANY-PROJECT-OVERVIEW.md` | Project bible — the primary context document for all planning |
 | `Founding_Memorandum_Theatre_Company.docx` | 30-page research memorandum (binary .docx — original format) |
 | `Founding_Memorandum_Theatre_Company.md` | Same memorandum converted to markdown (editable, readable by Claude Code) |
+| `founders-workshop-guide.md` | Extended workshop guide for founders — network reactivation, LLC/business education, founder alignment exercises, 90-day action calendar |
 | `founders-syllabus.html` | 8-module self-directed education program — interactive HTML with checklist |
 | `the-thin-place-hype.html` | Cinematic motivational hype site for founders |
 
