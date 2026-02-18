@@ -7,7 +7,7 @@
       "id": "foundation",
       "name": "Foundation",
       "range": "Feb \u2013 May 2026",
-      "description": "Lay the groundwork. Fiscal sponsorship, licensing inquiry, venue visits, the Equity call. Plant seeds, see shows, meet people."
+      "description": "Lay the groundwork. Form the LLC, secure fiscal sponsorship, licensing inquiry, venue visits, the Equity call. Plant seeds, see shows, meet people."
     },
     {
       "id": "reading",
@@ -19,7 +19,7 @@
       "id": "organization",
       "name": "Building the Organization",
       "range": "Nov 2026 \u2013 Apr 2027",
-      "description": "501(c)(3) incorporation. Board installation. Founding Circle fundraising. The machine begins to run."
+      "description": "Launch programming. Build the revenue base. Founding Circle fundraising. The machine begins to run."
     },
     {
       "id": "production",
@@ -46,9 +46,25 @@
       "notBefore": null
     },
     {
+      "id": "form-llc",
+      "title": "Form the Illinois LLC",
+      "description": "File Articles of Organization ($150), get EIN, open business bank account",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": null
+    },
+    {
       "id": "fractured-atlas",
       "title": "Apply for Fractured Atlas fiscal sponsorship",
       "description": "$129/year membership, 8% admin fee, approval in ~2 weeks",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": null
+    },
+    {
+      "id": "operating-agreement",
+      "title": "Draft LLC operating agreement",
+      "description": "Roles, responsibilities, decision-making, profit distribution, exit provisions",
       "phase": "foundation",
       "status": "not-started",
       "notBefore": null
@@ -150,17 +166,17 @@
       "notBefore": "2026-10-01"
     },
     {
-      "id": "incorporate-501c3",
-      "title": "Incorporate as Illinois 501(c)(3)",
-      "description": "IL Form NFP 102.10 ($50) + IRS Form 1023-EZ ($275)",
+      "id": "launch-programming",
+      "title": "Launch recurring programming",
+      "description": "Reading series, workshops, or salon events \u2014 build audience and revenue between productions",
       "phase": "organization",
       "status": "not-started",
       "notBefore": "2026-11-01"
     },
     {
-      "id": "recruit-board",
-      "title": "Recruit and install board of directors",
-      "description": "Minimum 3 members \u2014 begin identifying candidates during Foundation phase",
+      "id": "begin-services",
+      "title": "Begin offering professional services",
+      "description": "Design, branding, grant writing, arts admin consulting for other Chicago companies through the LLC",
       "phase": "organization",
       "status": "not-started",
       "notBefore": "2026-11-01"
