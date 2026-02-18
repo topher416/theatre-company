@@ -36,7 +36,7 @@ export default function App() {
       {completed.length > 0 && <Completed milestones={completed} />}
       <footer className="footer">
         <p className="footer-text">The work itself is the argument.</p>
-        <a className="hype-link" href="/the-thin-place-hype.html" target="_blank" rel="noopener noreferrer">
+        <a className="hype-link" href={import.meta.env.BASE_URL + 'the-thin-place-hype.html'} target="_blank" rel="noopener noreferrer">
           Remember why we're doing this &rarr;
         </a>
       </footer>
