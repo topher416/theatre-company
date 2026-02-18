@@ -1,0 +1,193 @@
+{
+  "reading": { "label": "The Reading", "date": "2026-10-15" },
+  "production": { "label": "Opening Night", "date": "2027-10-15" },
+  "currentPhase": "foundation",
+  "phases": [
+    {
+      "id": "foundation",
+      "name": "Foundation",
+      "range": "Feb \u2013 May 2026",
+      "description": "Lay the groundwork. Fiscal sponsorship, licensing inquiry, venue visits, the Equity call. Plant seeds, see shows, meet people."
+    },
+    {
+      "id": "reading",
+      "name": "The Reading",
+      "range": "Jun \u2013 Oct 2026",
+      "description": "Cast the reading, rehearse, execute. Our debut in Chicago. The impression we make here is the foundation of everything."
+    },
+    {
+      "id": "organization",
+      "name": "Building the Organization",
+      "range": "Nov 2026 \u2013 Apr 2027",
+      "description": "501(c)(3) incorporation. Board installation. Founding Circle fundraising. The machine begins to run."
+    },
+    {
+      "id": "production",
+      "name": "The Production",
+      "range": "May \u2013 Oct 2027",
+      "description": "Rehearsals, tech, previews, opening night. The lights go down in a Chicago storefront. Not our last."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "read-play-together",
+      "title": "Read the play together",
+      "description": "Cassie reads in NM, then read and discuss together at home",
+      "phase": "foundation",
+      "status": "in-progress",
+      "notBefore": null
+    },
+    {
+      "id": "call-aea",
+      "title": "Call AEA Central Regional Office",
+      "description": "Resolve Cassie\u2019s member-producer status \u2014 312-641-0393",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": null
+    },
+    {
+      "id": "fractured-atlas",
+      "title": "Apply for Fractured Atlas fiscal sponsorship",
+      "description": "$129/year membership, 8% admin fee, approval in ~2 weeks",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": null
+    },
+    {
+      "id": "licensing-inquiry",
+      "title": "Send licensing inquiry to Concord Theatricals",
+      "description": "Confirm availability, royalty rates, and any illusion design requirements",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": null
+    },
+    {
+      "id": "start-dream-doc",
+      "title": "Start the Dream Doc",
+      "description": "Seed the shared Google Doc after the first real conversation about the play",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": null
+    },
+    {
+      "id": "people-map-evening",
+      "title": "People Map evening",
+      "description": "Wine, a shared screen, \u201cOK who do we know?\u201d \u2014 fill in the Google Sheet together",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": null
+    },
+    {
+      "id": "visit-venues",
+      "title": "Visit Theatre Wit, Bramble, and The Den as audience",
+      "description": "See shows at all three target venues within 60 days",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": null
+    },
+    {
+      "id": "join-league",
+      "title": "Join League of Chicago Theatres",
+      "description": "$150/year for budget under $25K \u2014 ChicagoPlays listing, Hot Tix, mixers",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": "2026-03-01"
+    },
+    {
+      "id": "choose-name",
+      "title": "Choose company name",
+      "description": "Secure domain and social media handles once decided",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": "2026-03-15"
+    },
+    {
+      "id": "reach-out-slc",
+      "title": "Reach out to SLC network",
+      "description": "Jerry Rapier, Shannon Musgrave, former collaborators \u2014 plant seeds",
+      "phase": "foundation",
+      "status": "not-started",
+      "notBefore": "2026-03-01"
+    },
+    {
+      "id": "identify-director",
+      "title": "Identify and approach a director",
+      "description": "Someone with Chicago credibility who understands intimate, rigorous work",
+      "phase": "reading",
+      "status": "not-started",
+      "notBefore": "2026-06-01"
+    },
+    {
+      "id": "cast-reading",
+      "title": "Cast the reading",
+      "description": "4 actors \u2014 first opportunity to build Chicago relationships",
+      "phase": "reading",
+      "status": "not-started",
+      "notBefore": "2026-07-01"
+    },
+    {
+      "id": "secure-reading-venue",
+      "title": "Secure venue for the reading",
+      "description": "Intimate space, invited audience only \u2014 29-Hour Code restrictions apply",
+      "phase": "reading",
+      "status": "not-started",
+      "notBefore": "2026-06-01"
+    },
+    {
+      "id": "register-aea-reading",
+      "title": "Register reading with AEA",
+      "description": "29-Hour Staged Reading Code \u2014 max 29 hours over 14 days, max 3 presentations",
+      "phase": "reading",
+      "status": "not-started",
+      "notBefore": "2026-08-01"
+    },
+    {
+      "id": "execute-reading",
+      "title": "Execute the reading",
+      "description": "Our debut in Chicago. Host reception, collect contacts, make the impression count.",
+      "phase": "reading",
+      "status": "not-started",
+      "notBefore": "2026-10-01"
+    },
+    {
+      "id": "incorporate-501c3",
+      "title": "Incorporate as Illinois 501(c)(3)",
+      "description": "IL Form NFP 102.10 ($50) + IRS Form 1023-EZ ($275)",
+      "phase": "organization",
+      "status": "not-started",
+      "notBefore": "2026-11-01"
+    },
+    {
+      "id": "recruit-board",
+      "title": "Recruit and install board of directors",
+      "description": "Minimum 3 members \u2014 begin identifying candidates during Foundation phase",
+      "phase": "organization",
+      "status": "not-started",
+      "notBefore": "2026-11-01"
+    },
+    {
+      "id": "founding-circle",
+      "title": "Launch Founding Circle fundraising",
+      "description": "10-20 individuals at $250\u2013$1,000 each \u2014 investment, not charity",
+      "phase": "organization",
+      "status": "not-started",
+      "notBefore": "2027-01-01"
+    },
+    {
+      "id": "production-license",
+      "title": "Secure production license from Concord",
+      "description": "Full production license for The Thin Place \u2014 professional rate applies",
+      "phase": "organization",
+      "status": "not-started",
+      "notBefore": "2027-02-01"
+    },
+    {
+      "id": "opening-night",
+      "title": "Opening night",
+      "description": "The lights go down in a Chicago storefront. Four actors. One play. Not our last.",
+      "phase": "production",
+      "status": "not-started",
+      "notBefore": "2027-10-01"
+    }
+  ]
+}
