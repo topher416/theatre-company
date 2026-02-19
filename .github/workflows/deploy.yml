@@ -33,6 +33,10 @@ jobs:
         working-directory: tracker
         run: npm run build
 
+      - name: Copy root HTML files into dist
+        run: |
+          cp *.html tracker/dist/ 2>/dev/null || true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
