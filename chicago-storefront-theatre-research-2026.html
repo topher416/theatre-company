@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Decimation of Chicago Storefront Theatre, 2019-2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0C0A0E;
+  --bg-raised: #151219;
+  --bg-card: #1A1720;
+  --bg-table-row: #12101A;
+  --text: #E2DAD0;
+  --text-dim: #9A9290;
+  --text-bright: #F5F0EA;
+  --accent: #C17829;
+  --accent-glow: #D4912F;
+  --accent-dim: rgba(193,120,41,0.15);
+  --red: #8B2020;
+  --red-dim: rgba(139,32,32,0.12);
+  --border: #2A2530;
+  --border-light: #352F3D;
+  --nav-w: 280px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  font-size: 17px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ── NAV SIDEBAR ─────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--nav-w);
+  height: 100vh;
+  background: var(--bg-raised);
+  border-right: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  overflow-y: auto;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+nav .nav-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+nav .nav-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+
+nav .nav-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+nav ol {
+  list-style: none;
+  counter-reset: nav-counter;
+}
+
+nav ol li {
+  counter-increment: nav-counter;
+  margin-bottom: 0.15rem;
+}
+
+nav ol li a {
+  display: block;
+  padding: 0.45rem 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+nav ol li a::before {
+  content: counter(nav-counter) ".";
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+  margin-right: 0.5rem;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+nav ol li a:hover {
+  color: var(--text-bright);
+  background: rgba(255,255,255,0.03);
+}
+
+nav ol li a.active {
+  color: var(--text-bright);
+  background: var(--accent-dim);
+}
+
+nav ol li a.active::before {
+  opacity: 1;
+}
+
+nav .nav-bottom {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* ── MOBILE NAV ──────────────────────────── */
+.mobile-nav-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem; left: 1rem;
+  z-index: 200;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  width: 44px; height: 44px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── MAIN CONTENT ────────────────────────── */
+main {
+  margin-left: var(--nav-w);
+  max-width: 780px;
+  padding: 3rem 3rem 6rem;
+}
+
+/* ── HERO / HEADER ───────────────────────── */
+.hero {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3.5rem;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--text-bright);
+  line-height: 1.12;
+  margin-bottom: 0.8rem;
+  max-width: 650px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero .hero-sub {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+}
+
+.hero .hero-meta {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  line-height: 1.9;
+}
+
+.hero .hero-meta span {
+  color: var(--text);
+}
+
+/* ── SECTIONS ────────────────────────────── */
+section {
+  margin-bottom: 4rem;
+  padding-top: 1rem;
+}
+
+section h2 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--text-bright);
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+section h2 .section-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+section h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+section h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-rule {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 2rem;
+  opacity: 0.5;
+}
+
+p {
+  margin-bottom: 1.1rem;
+}
+
+strong {
+  color: var(--text-bright);
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(193,120,41,0.3);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s;
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
+}
+
+ul, ol {
+  margin-bottom: 1.1rem;
+  padding-left: 1.4rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+/* ── PULL QUOTES / CALLOUTS ──────────────── */
+.callout {
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  padding: 1.5rem 1.8rem;
+  margin: 2rem 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.callout p {
+  margin-bottom: 0.5rem;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.stat-row {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  flex: 1;
+  min-width: 140px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.3rem 1.2rem;
+  text-align: center;
+}
+
+.stat-box .stat-num {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.stat-box .stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.big-stat {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.big-stat .big-num {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.big-stat .big-num .dim { color: var(--text-dim); }
+.big-stat .big-num .arrow { color: var(--red); margin: 0 0.3rem; font-size: 2.5rem; vertical-align: middle; }
+.big-stat .big-num .accent { color: var(--accent); }
+
+.big-stat .big-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.pullquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.8rem 0 0.8rem 1.5rem;
+  margin: 2rem 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-bright);
+  line-height: 1.5;
+}
+
+.pullquote cite {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-style: normal;
+  color: var(--text-dim);
+  margin-top: 0.6rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── ASSESSMENT BADGES ───────────────────── */
+.assessment {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+
+.assessment.structural { background: var(--red-dim); color: #D45555; border: 1px solid rgba(139,32,32,0.3); }
+.assessment.cyclical { background: rgba(40,120,80,0.12); color: #5CB88A; border: 1px solid rgba(40,120,80,0.3); }
+.assessment.mixed { background: rgba(180,140,40,0.12); color: #C4A840; border: 1px solid rgba(180,140,40,0.3); }
+
+/* ── TABLES ──────────────────────────────── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+thead {
+  background: var(--bg-card);
+}
+
+th {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tr:nth-child(even) {
+  background: rgba(255,255,255,0.015);
+}
+
+td.highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+td.red {
+  color: #D45555;
+  font-weight: 600;
+}
+
+td.dim { color: var(--text-dim); }
+
+.table-caption {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── COMPANY DEAD LIST ───────────────────── */
+.dead-list {
+  columns: 2;
+  column-gap: 2rem;
+  margin: 1.5rem 0;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.9;
+  list-style: none;
+  padding: 0;
+}
+
+.dead-list li::before {
+  content: "\2715";
+  color: var(--red);
+  margin-right: 0.5rem;
+  font-size: 0.7rem;
+}
+
+/* ── RANKED CAUSES ───────────────────────── */
+.cause-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  margin: 1.5rem 0;
+}
+
+.cause-card .cause-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.cause-card .cause-rank {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  min-width: 20px;
+}
+
+.cause-card .cause-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+.cause-card .cause-badges {
+  margin-bottom: 0.8rem;
+}
+
+/* ── VERDICT SECTION ─────────────────────── */
+.verdict-section {
+  border-top: 3px solid var(--accent);
+  padding-top: 3rem;
+  margin-top: 4rem;
+}
+
+.verdict-section h2 {
+  font-size: 2.2rem;
+}
+
+.verdict-box {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(193,120,41,0.08) 100%);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 2.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.verdict-box .verdict-text {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--text-bright);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.verdict-box .verdict-sub {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.verdict-final {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* ── NUMBERED LIST (verdict points) ──────── */
+.evidence-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: evidence;
+}
+
+.evidence-list li {
+  counter-increment: evidence;
+  padding: 1rem 0 1rem 3rem;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+.evidence-list li:last-child { border-bottom: none; }
+
+.evidence-list li::before {
+  content: counter(evidence);
+  position: absolute;
+  left: 0; top: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--accent);
+  opacity: 0.6;
+}
+
+/* ── GAPS TABLE ───────────────────────────── */
+.priority-high { color: #D45555; }
+.priority-med { color: var(--accent); }
+.priority-low { color: var(--text-dim); }
+
+/* ── SOURCES ─────────────────────────────── */
+.sources-section h3 {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.sources-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sources-section li {
+  font-size: 0.78rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.sources-section a {
+  text-decoration-color: rgba(193,120,41,0.2);
+}
+
+/* ── FOOTNOTE / SUBTLE TEXT ──────────────── */
+.note {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.section-source {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media (max-width: 1000px) {
+  nav { display: none; }
+  nav.open { display: flex; width: 280px; }
+  .mobile-nav-toggle { display: flex; }
+  main { margin-left: 0; padding: 4rem 1.5rem 4rem; }
+  .hero h1 { font-size: 2rem; }
+  .big-stat .big-num { font-size: 3rem; }
+  .stat-row { gap: 0.8rem; }
+  .stat-box { min-width: 110px; }
+  .stat-box .stat-num { font-size: 1.6rem; }
+  .dead-list { columns: 1; }
+  .evidence-list li { padding-left: 2.5rem; }
+}
+
+@media (max-width: 600px) {
+  html { font-size: 15px; }
+  main { padding: 3.5rem 1rem 3rem; }
+  .hero h1 { font-size: 1.7rem; }
+  section h2 { font-size: 1.5rem; }
+  .big-stat .big-num { font-size: 2.4rem; }
+  .big-stat .big-num .arrow { font-size: 1.5rem; }
+  .verdict-box { padding: 1.5rem; }
+  .verdict-box .verdict-text { font-size: 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Mobile nav toggle -->
+<button class="mobile-nav-toggle" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Toggle navigation">&#9776;</button>
+
+<!-- Sidebar Navigation -->
+<nav>
+  <div class="nav-label">Research Brief</div>
+  <div class="nav-title">The Decimation of Chicago Storefront Theatre</div>
+  <div class="nav-subtitle">2019 &ndash; 2026</div>
+  <ol>
+    <li><a href="#executive-summary">Executive Summary</a></li>
+    <li><a href="#contraction">The Contraction by the Numbers</a></li>
+    <li><a href="#causes">Causal Analysis</a></li>
+    <li><a href="#context">Comparative Context</a></li>
+    <li><a href="#market">Current Market Snapshot</a></li>
+    <li><a href="#model">Business Model Implications</a></li>
+    <li><a href="#verdict">The Verdict</a></li>
+    <li><a href="#gaps">Data Gaps</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ol>
+  <div class="nav-bottom">
+    Prepared Feb 19, 2026<br>
+    For Neorevival Theatre Co.<br>
+    Topher Rasmussen &amp;<br>Cassandra Stokes-Wylie
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main>
+
+<!-- ════════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-eyebrow">A Research Brief for Neorevival Theatre Company</div>
+  <h1>The Decimation of Chicago Storefront Theatre, <em>2019&ndash;2026</em></h1>
+  <div class="hero-sub">What happened, why, and what the wreckage tells us about building now.</div>
+  <div class="hero-meta">
+    Prepared <span>February 19, 2026</span><br>
+    For <span>Topher Rasmussen</span> &amp; <span>Cassandra Stokes-Wylie</span><br>
+    Compiled from 60+ sources &middot; 4 parallel research tracks
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════ -->
+<!-- 1. EXECUTIVE SUMMARY -->
+<!-- ════════════════════════════════════════ -->
+<section id="executive-summary">
+  <h2><span class="section-num">Section 01</span>Executive Summary</h2>
+  <div class="section-rule"></div>
+
+  <div class="big-stat">
+    <div class="big-num"><span class="dim">127</span><span class="arrow">&rarr;</span><span class="accent">51</span></div>
+    <div class="big-label">Full-season producing companies &middot; 2019 vs. 2025</div>
+  </div>
+
+  <p><strong>Chicago&rsquo;s storefront theatre ecosystem lost 60% of its producing companies between 2019 and 2025.</strong> From 127 full-season producers pre-pandemic, roughly 51 remain. At least 34 companies closed between 2019 and 2023 alone (Chris Jones&rsquo;s count, which he called &ldquo;not even a complete list&rdquo;), with additional closures since. Nineteen dedicated storefront stages closed or became unsuitable. In-person performing arts attendance fell 59% from 2019 to 2022. Earned revenue remains 25&ndash;29% below 2019 nationally after inflation adjustment.</p>
+
+  <p><strong>The causes are a mix of structural and cyclical.</strong> COVID was the trigger, but the incomplete recovery reveals deeper structural shifts: permanent venue losses to residential development, a durable audience behavior change (subscription collapse, streaming competition, suburban retreat), foundation funding reallocation toward BIPOC organizations, and the inherent fragility of founder-dependent organizations with zero reserves. Some portion of the contraction is a market correction&nbsp;&mdash; not all 200 companies were viable.</p>
+
+  <div class="callout">
+    <p><strong>However, every major storefront company in Chicago&rsquo;s history was founded during a downturn.</strong> Steppenwolf (1974, stagflation), Lookingglass (1988, S&amp;L crisis), A Red Orchid (1993, recession aftermath), Trap Door (1994), Theater Wit (2003, post-9/11). Business research from the Stockholm School of Economics shows recession-born startups are 12.1% more likely to survive to year seven.</p>
+  </div>
+
+  <p><strong>The current market presents a specific, identifiable opportunity.</strong> Theater Wit&rsquo;s new Shared Spaces program offers rental at $1,000/week (subsidized by a $600,000 grant). The talent pool is oversupplied. The competitive field is thinner. And critically: <strong>no Chicago storefront company is building its identity around essential 21st-century American plays</strong> (Baker, Hnath, Ruhl, Karam, Jacobs-Jenkins, Majok, Eno, Harrison). Lucas Hnath has not had a Chicago production since 2016. Annie Baker since 2011. The niche is real and unoccupied.</p>
+
+  <p><strong>The verdict: This is not delusion. It is a calculated entry into a corrected market, consistent with every historical precedent for successful company formation in Chicago.</strong> The risk is real but manageable. The structural advantages of entering now&nbsp;&mdash; lower costs, available talent, less competition, improving venue access, and an audience hungry for quality&nbsp;&mdash; outweigh the headwinds. The decisive variable is not the market. It is the quality of the work.</p>
+</section>
+
+<!-- ════════════════════════════════════════ -->
+<!-- 2. CONTRACTION BY THE NUMBERS -->
+<!-- ════════════════════════════════════════ -->
+<section id="contraction">
+  <h2><span class="section-num">Section 02</span>The Contraction by the Numbers</h2>
+  <div class="section-rule"></div>
+
+  <h3>2.1 Headline Statistics</h3>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-num">-60%</div><div class="stat-label">Producing Companies</div></div>
+    <div class="stat-box"><div class="stat-num">-59%</div><div class="stat-label">Attendance (2022)</div></div>
+    <div class="stat-box"><div class="stat-num">-29%</div><div class="stat-label">Earned Revenue</div></div>
+    <div class="stat-box"><div class="stat-num">19</div><div class="stat-label">Stages Lost</div></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th>2018&ndash;2019</th><th>2025&ndash;2026</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td>Companies producing full seasons</td><td>127</td><td>~51</td><td class="red">-60%</td></tr>
+        <tr><td>Total theatre companies (League est.)</td><td>~200&ndash;250</td><td>Unknown (significantly fewer)</td><td class="red">Severe decline</td></tr>
+        <tr><td>Dedicated storefront stages</td><td>Not precisely counted</td><td>19 fewer than pre-pandemic</td><td class="red">Structural loss</td></tr>
+        <tr><td>In-person performing arts attendance</td><td>Baseline</td><td>-59% as of 2022</td><td class="red">Partial recovery since</td></tr>
+        <tr><td>Performing arts subscribers</td><td>Baseline</td><td>-26% to -39% by 2022</td><td class="red">Subscription model in crisis</td></tr>
+        <tr><td>Earned revenue (national, inflation-adj.)</td><td>Baseline</td><td>-25% to -29% as of 2023</td><td class="red">Incomplete recovery</td></tr>
+        <tr><td>National nonprofit theatre attendees</td><td>~38 million</td><td>~27 million (2023)</td><td class="red">-29%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-source">Sources: Theater Wit AD Jeremy Wechsler, DCASE/SMU DataArts &ldquo;Navigating Recovery&rdquo; (2023), TCG Theatre Facts 2023, Chris Jones / Chicago Tribune (Aug 2023)</div>
+
+  <h3>2.2 Company Closures Timeline</h3>
+
+  <h4>Pre-pandemic closures (context)</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Company</th><th>Year</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Profiles Theatre</td><td>2016</td><td>Closed 6 days after Chicago Reader abuse expos&eacute;. 28-year run.</td></tr>
+        <tr><td>Signal Ensemble Theatre</td><td>2016</td><td>Elected to dissolve after 13 seasons.</td></tr>
+        <tr><td>Oracle Productions</td><td>2016</td><td>Ceased operations within a year of taking over Signal&rsquo;s space.</td></tr>
+        <tr><td>American Theater Company</td><td>2018</td><td>Closed after 33 years. Never recovered from founder PJ Paparelli&rsquo;s death (2015). Had originated <em>The Humans</em> and <em>Disgraced</em> to Broadway.</td></tr>
+        <tr><td>Quest Theatre Ensemble</td><td>2018</td><td>Closed after 16 years, same week as ATC.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Pandemic-era and post-pandemic closures (2020&ndash;2025)</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Company</th><th>Year</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>House Theatre of Chicago</td><td>2022</td><td>21-year run, 70 Jeff nominations. Board determined insufficient financial momentum.</td></tr>
+        <tr><td>Underscore Theatre Co.</td><td>2022</td><td>11 years, 16 world premieres. Cited need for dramatic model shift post-COVID.</td></tr>
+        <tr><td>Sideshow Theatre</td><td>2023</td><td>15 years. Lost venue leaving Victory Gardens in solidarity. &ldquo;Diverging lives and careers.&rdquo;</td></tr>
+        <tr><td>BoHo Theatre</td><td>2023</td><td>19 years. American Theatre: &ldquo;the brutal calculus of Chicago storefronts.&rdquo;</td></tr>
+        <tr><td>Interrobang Theatre Project</td><td>2023</td><td>Concluded operations August 2023.</td></tr>
+        <tr><td>First Folio Theatre</td><td>2023</td><td>25+ years in Oak Brook. Planned wind-down with founder&rsquo;s retirement.</td></tr>
+        <tr><td>Windy City Playhouse</td><td>2023</td><td>Building sold. Space later taken by Invictus Theatre (2024).</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Additional confirmed closures (2020&ndash;2023)</h4>
+  <ul class="dead-list">
+    <li>16th Street Theater</li><li>Akvavit Theatre</li><li>Aston Rep Theatre Co.</li><li>Awkward Pause Theatre</li>
+    <li>Black Button Eyes</li><li>Broken Nose Theatre</li><li>Brown Paper Box Co.</li><li>Chicago Theater Works</li>
+    <li>Chicago Mammals</li><li>Dog and Pony Theatre</li><li>Eclipse Theatre</li><li>GayCo Productions</li>
+    <li>Gorilla Tango Theatre</li><li>Irish Theatre of Chicago</li><li>The New Coordinates</li><li>Provision Theater</li>
+    <li>Red Tape Theatre</li><li>Refuge Theatre Project</li><li>Right Brain Project</li><li>Route 66 Theatre Co.</li>
+    <li>Side Project Theatre</li><li>Stockyards Theatre Project</li><li>Strange Tree Group</li><li>Vitalist Theatre</li>
+    <li>Waltzing Mechanics</li><li>WildClaw Theatre</li>
+  </ul>
+
+  <h4>Companies severely disrupted but not dead</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Company</th><th>Status</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Victory Gardens</td><td class="red">Functionally dead as producer</td><td>Staff fired 2022. Transitioned to &ldquo;foundation&rdquo; model. Brief Mamet reopening spring 2025; future uncertain.</td></tr>
+        <tr><td>Lookingglass</td><td class="highlight">Paused 18 months, reopened lean</td><td>Staff 24&rarr;10. Budget $6M&rarr;$2.5M. Reopened Jan 2024 with 2 shows/year. Schwimmer &ldquo;doubling down&rdquo; 2026.</td></tr>
+        <tr><td>Steppenwolf</td><td class="highlight">Operating but contracted</td><td>12% staff laid off (Aug 2023). Budget $20M&rarr;$16M. Subscriptions 10K&rarr;~6K. Single-ticket revenue down 31%.</td></tr>
+        <tr><td>Lifeline Theatre</td><td class="highlight">Under financial stress</td><td>$200K budget shortfall 2024. &ldquo;Save Our Stage&rdquo; raised $116K. Continuing with &ldquo;temporary contraction.&rdquo;</td></tr>
+        <tr><td>Steep Theatre</td><td style="color:#5CB88A;">Active, rebuilding</td><td>Lost space to apartments 2020. Reopened 2022 at new location. Building new 70-seat space, opening fall 2026.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>2.3 Venue Losses</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Venue</th><th>Location</th><th>What Happened</th></tr></thead>
+      <tbody>
+        <tr><td>Royal George Theatre</td><td>Lincoln Park</td><td>4 stages. Closed at pandemic start. <strong>Demolished for 9-story apartments.</strong></td></tr>
+        <tr><td>Stage 773</td><td>Lakeview</td><td>3 &times; 148-seat venues. Cornerstone since 1977. Pitched for 40-unit apartment building.</td></tr>
+        <tr><td>Briar Street Theatre</td><td>East Lakeview</td><td>Blue Man Group departed Jan 2025. Proposed for 66 residential apartments.</td></tr>
+        <tr><td>Victory Gardens / Biograph</td><td>Lincoln Park</td><td>259 + 109 seats. Dark 2022&ndash;2025. Building intact but company dead.</td></tr>
+        <tr><td>Mercury Theater</td><td>Lakeview</td><td>Closed 2020, reopened, won Jeff, went dark again. Status uncertain.</td></tr>
+        <tr><td>Steep Theatre (original)</td><td>Edgewater</td><td>Sold for apartment development 2020. Steep relocated.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pullquote">Demolished buildings do not return. Residential conversions do not revert. The venue supply is permanently smaller.</div>
+
+  <h3>2.4 Pre-Pandemic Baseline</h3>
+  <p>The <strong>Gaylord &amp; Dorothy Donnelley Foundation&rsquo;s 2019 Storefront Theatre Study</strong> (surveying 41 of ~250 storefront companies) established:</p>
+  <ul>
+    <li>41 surveyed companies served ~267,400 audience members per season</li>
+    <li>Generated <strong>$80 million in economic activity</strong> ($12 per $1 of ticket spending)</li>
+    <li>66% staged world premieres that season</li>
+    <li>71% relied on contributed income for more than half of annual revenue</li>
+    <li>1 in 4 charged $25 or less per ticket; 1 in 7 offered free or PWYC</li>
+  </ul>
+
+  <h3>2.5 National Context (TCG Theatre Facts)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th>2019</th><th>2022</th><th>2023</th></tr></thead>
+      <tbody>
+        <tr><td>Economic contribution</td><td>$2.8B</td><td>$2.3B</td><td>$3.6B</td></tr>
+        <tr><td>National attendees</td><td>~38M</td><td>~10M</td><td>~27M</td></tr>
+        <tr><td>Ticket income vs. 2019 (inflation-adj.)</td><td>Baseline</td><td class="red">-55%</td><td class="red">-29%</td></tr>
+        <tr><td>Theatres projecting deficits</td><td>~10%</td><td class="dim">&mdash;</td><td class="red">60%</td></tr>
+        <tr><td>Negative change in unrestricted net assets</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="red">61% (worst on record)</td></tr>
+        <tr><td>Average total staff</td><td>319</td><td class="dim">&mdash;</td><td class="red">175 (-47%)</td></tr>
+        <tr><td>Under-18 attendance</td><td>Baseline</td><td class="dim">&mdash;</td><td class="red">-23%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <p><strong>Critical finding:</strong> Working capital levels were positive for theatres with budgets under $10 million but negative for the largest theatres. Small-budget theatres are in better financial health than large ones. The contraction is hitting over-leveraged institutions harder than lean operations.</p>
+  </div>
+
+  <h3>2.6 IRS Form 990 Data</h3>
+  <p class="note">[MANUAL PULL REQUIRED] &mdash; ProPublica Nonprofit Explorer profiles located for all target organizations. Links provided in the <a href="/Users/topher416/theatre-company/chicago-storefront-theatre-research-2026.md">full markdown document</a> for manual 990 retrieval. Key fields: Total Revenue (Part I, Line 12), Total Expenses (Part I, Line 18), Net Assets (Part I, Line 22). Compare 2018/2019 to 2022/2023. Estimated time: 2&ndash;3 hours.</p>
+</section>
+
+<!-- ════════════════════════════════════════ -->
+<!-- 3. CAUSAL ANALYSIS -->
+<!-- ════════════════════════════════════════ -->
+<section id="causes">
+  <h2><span class="section-num">Section 03</span>Causal Analysis</h2>
+  <div class="section-rule"></div>
+
+  <h3>3.1 Ranked Causes</h3>
+
+  <div class="cause-card">
+    <div class="cause-header"><span class="cause-rank">#1</span><span class="cause-title">COVID Shock + Incomplete Recovery</span></div>
+    <div class="cause-badges"><span class="assessment mixed">Cyclical trigger, structural aftermath</span><span class="assessment" style="background:rgba(255,255,255,0.05);color:var(--text-bright);border:1px solid var(--border);">Evidence: Strong</span></div>
+    <p>Total earned income in 2023 remained <strong>25% lower than 2019</strong>. Ticket income was <strong>29% lower after inflation</strong>. 61% of trend theatres reported negative CUNA&nbsp;&mdash; the worst since TCG began tracking. In Chicago specifically: attendance down 59%, subscribers down 26&ndash;39%, fifteen organizations had 200K+ attendance in 2019&nbsp;&mdash; by 2022, <strong>only one</strong> did.</p>
+    <p>Steppenwolf received $7.48M in federal emergency relief 2020&ndash;2022. When it ended, the cliff was brutal: subscriptions 10K&rarr;6K, budget $20M&rarr;$16M, 12% staff cut. Lookingglass paused 18 months, slashed budget 58%.</p>
+    <p><strong>Assessment:</strong> The initial shock was cyclical. The incomplete recovery is trending structural. Five years post-pandemic, earned revenue has not returned to 2019 levels. Companies that survived are stabilizing at lower operating levels.</p>
+  </div>
+
+  <div class="cause-card">
+    <div class="cause-header"><span class="cause-rank">#2</span><span class="cause-title">Loss of Physical Venue Infrastructure</span></div>
+    <div class="cause-badges"><span class="assessment structural">Structural</span><span class="assessment" style="background:rgba(255,255,255,0.05);color:var(--text-bright);border:1px solid var(--border);">Evidence: Strong</span></div>
+    <p>Storefront companies depended on cheap, raw, flexible, ground-floor commercial spaces with tolerant landlords. Those spaces are being systematically converted to residential. Each venue lost takes multiple companies with it. North Side rents grew 2.2% YOY. Chicago metro rent growth (3.1%) outpaced the national average.</p>
+    <p><strong>Assessment:</strong> Demolished buildings do not return. Residential conversions do not revert. The venue supply is permanently smaller.</p>
+  </div>
+
+  <div class="cause-card">
+    <div class="cause-header"><span class="cause-rank">#3</span><span class="cause-title">Audience Behavior Change</span></div>
+    <div class="cause-badges"><span class="assessment structural">Structural</span><span class="assessment" style="background:rgba(255,255,255,0.05);color:var(--text-bright);border:1px solid var(--border);">Evidence: Strong</span></div>
+    <p>Subscribers declined 39% for theatres. Audiences shifted to single-ticket purchasing. Streaming became durably elevated. Suburban audiences withdrew citing &ldquo;perceived crime&rdquo; (even though downtown accounted for &lt;1% of violent crime increases). Under-18 attendance fell 23% nationally, suggesting a pipeline problem. Concerts recovered faster than theatre&nbsp;&mdash; the problem is theatre-specific.</p>
+    <p><strong>Assessment:</strong> Mostly structural. The subscription model may never recover. But single-ticket buyers can be captured with strong marketing&nbsp;&mdash; a different business model, not no business model.</p>
+  </div>
+
+  <div class="cause-card">
+    <div class="cause-header"><span class="cause-rank">#4</span><span class="cause-title">Federal Relief Cliff + Donor Reallocation</span></div>
+    <div class="cause-badges"><span class="assessment mixed">Mixed</span><span class="assessment" style="background:rgba(255,255,255,0.05);color:var(--text-bright);border:1px solid var(--border);">Evidence: Moderate-Strong</span></div>
+    <p>When federal relief (PPP, SVOG, ERTC) ended, organizations faced lower audiences and higher costs with no safety net. Meanwhile, the Enrich Chicago 2024 study found BIPOC organizations received &gt;50% of foundation dollars 2020&ndash;2023, nearly double the 2013&ndash;2015 rate. This is not decline&nbsp;&mdash; it is <strong>reallocation</strong>. Government funding rose from 4% to 12% of expenses, but is fragile under current federal politics.</p>
+  </div>
+
+  <div class="cause-card">
+    <div class="cause-header"><span class="cause-rank">#5</span><span class="cause-title">Leadership Burnout + Organizational Fragility</span></div>
+    <div class="cause-badges"><span class="assessment structural">Structural vulnerability</span><span class="assessment" style="background:rgba(255,255,255,0.05);color:var(--text-bright);border:1px solid var(--border);">Evidence: Moderate</span></div>
+    <p>Most storefront companies are functionally 1&ndash;3 people doing everything. No staff, no institutional memory, no board that can independently sustain operations, no reserves. ATC closed because its center of gravity died. Sideshow closed from human energy depletion. The &ldquo;Great Resignation&rdquo; effect in theatre appears durable.</p>
+  </div>
+
+  <div class="cause-card">
+    <div class="cause-header"><span class="cause-rank">#6</span><span class="cause-title">Anchor Institution Collapse</span></div>
+    <div class="cause-badges"><span class="assessment structural">Structural</span><span class="assessment" style="background:rgba(255,255,255,0.05);color:var(--text-bright);border:1px solid var(--border);">Evidence: Strong</span></div>
+    <p>ATC (closed 2018), Victory Gardens (ceased 2022), Sideshow (closed 2023, cascading from VG collapse). These mid-tier pipeline companies gave emerging artists their first professional credits. When the middle collapses, the developmental pathway from storefront to institution is severed.</p>
+  </div>
+
+  <div class="cause-card">
+    <div class="cause-header"><span class="cause-rank">#7</span><span class="cause-title">Rising Production Costs</span></div>
+    <div class="cause-badges"><span class="assessment structural">Structural (gradual)</span><span class="assessment" style="background:rgba(255,255,255,0.05);color:var(--text-bright);border:1px solid var(--border);">Evidence: Moderate</span></div>
+    <p>Steppenwolf expenses up 19%. Venue costs rising as supply shrinks. New CAT contract (2024) includes wage increases. But most storefronts are non-Equity and unaffected by CAT minimums. More accelerant than primary cause. Theater Wit Shared Spaces grant directly addresses venue costs.</p>
+  </div>
+
+  <div class="cause-card">
+    <div class="cause-header"><span class="cause-rank">#8</span><span class="cause-title">Accountability Reckoning</span></div>
+    <div class="cause-badges"><span class="assessment cyclical">Accelerant only</span><span class="assessment" style="background:rgba(255,255,255,0.05);color:var(--text-bright);border:1px solid var(--border);">Evidence: Moderate</span></div>
+    <p>Chicago Theatre Standards (Not In Our House) are <strong>voluntary, free, and unenforced</strong>. The claim that accountability priced companies out is not supported by evidence. The turbulent phase (2016&ndash;2022) is largely past. Companies forming now can build accountability into their DNA from day one.</p>
+  </div>
+
+  <h3>3.2 The Market Correction Question</h3>
+  <p>Some portion of the contraction represents a <strong>market correction, not a tragedy</strong>. Not all 200 companies were doing good work. Some were vanity projects, poorly managed, or had no audience. The &ldquo;Decentering Doom&rdquo; essay (American Theatre, Oct 2023) noted that the most-cited crisis op-eds focused on $21M-budget companies led by white cisgender men, while ignoring thriving storefronts like Rivendell&nbsp;&mdash; which extended three times and sold out its 47-seat house.</p>
+  <p><strong>The honest assessment:</strong> The ecosystem was probably over-supplied relative to demand even before COVID. The pandemic accelerated a correction that might have happened more gradually. Some of what was lost was excellent. Some was not.</p>
+</section>
+
+<!-- ════════════════════════════════════════ -->
+<!-- 4. COMPARATIVE CONTEXT -->
+<!-- ════════════════════════════════════════ -->
+<section id="context">
+  <h2><span class="section-num">Section 04</span>Comparative Context</h2>
+  <div class="section-rule"></div>
+
+  <h3>4.1 Every Great Company Was Born in a Downturn</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Company</th><th>Founded</th><th>Economic Conditions</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Steppenwolf</strong></td><td class="highlight">1974</td><td>1973&ndash;75 recession (worst since Depression). Stagflation. 9% unemployment. Oil crisis. Founded in a church in Deerfield, then a Catholic school basement.</td></tr>
+        <tr><td><strong>Lookingglass</strong></td><td class="highlight">1988</td><td>S&amp;L crisis, onset of 1990&ndash;91 recession. Eight Northwestern grads raised $10K for Edinburgh Fringe. Itinerant for 15 years.</td></tr>
+        <tr><td><strong>A Red Orchid</strong></td><td class="highlight">1993</td><td>Early-1990s recession aftermath. Founded by Van Swearingen, Michael Shannon, and Lawrence Grimm. Became Equity in 3 years.</td></tr>
+        <tr><td><strong>Trap Door</strong></td><td class="highlight">1994</td><td>Economic restructuring. 900 sq ft, 45-seat converted space in Bucktown. Now: 116 shows, 35 American premieres, 10 European tours.</td></tr>
+        <tr><td><strong>Theater Wit</strong></td><td class="highlight">2003</td><td>Post-9/11 recession recovery.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pullquote">Not a single one of Chicago&rsquo;s great storefront companies launched during a boom and succeeded because of favorable tailwinds. They survived because the work was good, the commitment was total, and the overhead was low.</div>
+
+  <h3>4.2 Other Cities&rsquo; Post-Pandemic Contractions</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Market</th><th>Severity</th><th>Key Lesson</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Minneapolis</strong></td><td>Moderate</td><td>Guthrie: record $3.8M deficit, then near-breakeven in 1 year. Contraction hit the largest institution hardest. Being small and lean is more survivable.</td></tr>
+        <tr><td><strong>Portland</strong></td><td class="red">Severe</td><td>Artists Rep canceled entire season. PCS launched $9M emergency campaign (succeeded). Community will exists; the business model broke.</td></tr>
+        <tr><td><strong>Austin</strong></td><td>Moderate</td><td>Gentrification pressure analogous to Chicago. Responded with ATX Theatre collaborative hub.</td></tr>
+        <tr><td><strong>Philadelphia</strong></td><td>Gradual</td><td>2023 Fringe Festival sold record ~30K tickets. Event-based, curated programming thrives even when season models struggle.</td></tr>
+        <tr><td><strong>Washington DC</strong></td><td>Moderate-Severe</td><td>Source Theatre sold to restaurateurs for $4.5M. Venue crisis identical to Chicago&rsquo;s. Smaller, less deep ecosystem.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>4.3 The &ldquo;Buying the Dip&rdquo; Evidence</h3>
+
+  <div class="big-stat">
+    <div class="big-num"><span class="accent">12.1%</span></div>
+    <div class="big-label">More likely to survive to year 7 &middot; Recession-born startups vs. boom-era startups</div>
+  </div>
+
+  <p><strong>Stockholm School of Economics (2023):</strong> Startups born during the Great Recession experienced higher employment and sales growth (outpacing expansion startups by 35.2 and 35.7 percentage points over 7 years), were more successful at retaining founding talent, and produced more original innovations. The key caveat: advantages were most pronounced for companies with lower initial growth rates&nbsp;&mdash; recessions produce disciplined, resilient companies, not giant ones.</p>
+
+  <p><strong>Arts sector data:</strong> Between 2007 and 2009, approximately <strong>3,000 new nonprofit arts organizations were created nationally</strong>&nbsp;&mdash; 49% faster growth than all nonprofits combined. This occurred despite the arts sector taking the proportionately largest revenue hit of any nonprofit subsector.</p>
+</section>
+
+<!-- ════════════════════════════════════════ -->
+<!-- 5. CURRENT MARKET SNAPSHOT -->
+<!-- ════════════════════════════════════════ -->
+<section id="market">
+  <h2><span class="section-num">Section 05</span>Current Market Snapshot</h2>
+  <div class="section-rule"></div>
+
+  <h3>5.1 Available Venues</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Venue</th><th>Location</th><th>Rate</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Theater Wit</strong></td><td>Lakeview</td><td class="highlight">$1,000/wk (Shared Spaces)</td><td>$600K Angell Foundation grant. Includes marketing, accessibility. <strong>Best option for a startup.</strong></td></tr>
+        <tr><td><strong>The Den Theatre</strong></td><td>Wicker Park</td><td>Inquiry required</td><td>5 spaces (65&ndash;99 seats). Strong multi-tenant infrastructure.</td></tr>
+        <tr><td><strong>Greenhouse Theater</strong></td><td>Lincoln Park</td><td>~50% via Resident program</td><td>Profit-sharing model. Includes box office/FOH support.</td></tr>
+        <tr><td><strong>Bramble Arts Loft</strong></td><td>Andersonville</td><td>Bespoke</td><td>New venue (opened 2024). Profiled by American Theatre.</td></tr>
+        <tr><td><strong>Athenaeum Center</strong></td><td>Lakeview</td><td>Below-market; inquiry</td><td>Studios: 87 and 81 seats. Professional setup, full tech.</td></tr>
+        <tr><td><strong>Chopin Theatre</strong></td><td>Noble Square</td><td>&mdash;</td><td>Named &ldquo;Best Storefront Theater Incubator&rdquo; 2024.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>5.2 The Niche Gap</h3>
+  <p><strong>No company is specifically and consistently championing &ldquo;essential 21st-century American plays&rdquo; at storefront scale.</strong> Steppenwolf does these writers at 250+ seats. The storefront ecosystem has no equivalent.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Playwright</th><th>Most Recent Chicago Production</th><th>Scale</th></tr></thead>
+      <tbody>
+        <tr><td>Branden Jacobs-Jenkins</td><td><em>Purpose</em> (2024, Steppenwolf)</td><td>Large</td></tr>
+        <tr><td>Martyna Majok</td><td><em>Sanctuary City</em> (2024, Steppenwolf)</td><td>Large</td></tr>
+        <tr><td>Jonathan Spector</td><td><em>Eureka Day</em> (2026, TimeLine)</td><td>Mid-to-Large</td></tr>
+        <tr><td>Mia Chung</td><td><em>Catch as Catch Can</em> (2026, Steppenwolf)</td><td>Large</td></tr>
+        <tr style="background:var(--red-dim);"><td><strong>Lucas Hnath</strong></td><td class="red"><strong>No production since 2016</strong></td><td class="dim">&mdash;</td></tr>
+        <tr style="background:var(--red-dim);"><td><strong>Annie Baker</strong></td><td class="red"><strong>No production since 2011</strong></td><td class="dim">&mdash;</td></tr>
+        <tr style="background:var(--red-dim);"><td><strong>Sarah Ruhl</strong></td><td class="red"><strong>No recent storefront production</strong></td><td class="dim">&mdash;</td></tr>
+        <tr style="background:var(--red-dim);"><td><strong>Stephen Karam</strong></td><td class="red"><strong>No production found</strong></td><td class="dim">&mdash;</td></tr>
+        <tr style="background:var(--red-dim);"><td><strong>Will Eno</strong></td><td class="red"><strong>No production found</strong></td><td class="dim">&mdash;</td></tr>
+        <tr style="background:var(--red-dim);"><td><strong>Jordan Harrison</strong></td><td class="red"><strong>No production found</strong></td><td class="dim">&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>5.3 Competitive Landscape</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Company</th><th>Active?</th><th>Contemporary American?</th><th>Competitor?</th></tr></thead>
+      <tbody>
+        <tr><td>A Red Orchid</td><td style="color:#5CB88A;">Yes, thriving</td><td>Adjacent</td><td>Closest analog</td></tr>
+        <tr><td>Steep Theatre</td><td style="color:#5CB88A;">Yes, rebuilding</td><td>European-leaning</td><td>Complementary</td></tr>
+        <tr><td>Theater Wit</td><td style="color:#5CB88A;">Yes (venue)</td><td>Via tenants</td><td>Potential partner</td></tr>
+        <tr><td>Remy Bumppo</td><td style="color:#5CB88A;">Yes</td><td>Literary/European</td><td>Low overlap</td></tr>
+        <tr><td>Shattered Globe</td><td style="color:#5CB88A;">Yes (AD transition)</td><td>Some</td><td>Moderate overlap</td></tr>
+        <tr><td>TimeLine Theatre</td><td style="color:#5CB88A;">Yes, expanding</td><td>Selective</td><td>Low-moderate</td></tr>
+        <tr><td>Steppenwolf</td><td style="color:#5CB88A;">Yes</td><td>Yes</td><td>Different tier</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>5.4 Audience, Talent, Equity</h3>
+  <p><strong>Talent:</strong> With 76 fewer companies producing, there is more available talent per available role than at any point in recent history. Average total staff at nonprofits declined 47%.</p>
+  <p><strong>Audience:</strong> Chris Jones&rsquo;s 2025 year-end was titled &ldquo;Storefront shows and Court Theatre reign in our top 10.&rdquo; A Red Orchid&rsquo;s <em>Birds of North America</em> extended twice. TimeLine&rsquo;s <em>Eureka Day</em> transferred to Broadway Playhouse (550 seats). Price expectations: $25&ndash;$50.</p>
+  <p><strong>Equity codes:</strong> 29-Hour Reading Code (Oct 2026 staged reading). Chicago Showcase Code (Oct 2027 production&nbsp;&mdash; no minimum salary, audiences up to 99). <strong>Critical action item:</strong> Resolve Cassie&rsquo;s member-producer status via call to AEA Central Regional (312-641-0393).</p>
+</section>
+
+<!-- ════════════════════════════════════════ -->
+<!-- 6. BUSINESS MODEL IMPLICATIONS -->
+<!-- ════════════════════════════════════════ -->
+<section id="model">
+  <h2><span class="section-num">Section 06</span>Business Model Implications</h2>
+  <div class="section-rule"></div>
+
+  <h3>6.1 LLC + Fractured Atlas vs. 501(c)(3)</h3>
+  <p>The evidence supports your current plan: <strong>launch as LLC + Fractured Atlas fiscal sponsorship.</strong></p>
+  <ul>
+    <li>71% of pre-pandemic storefronts relied on contributed income for &gt;50% of revenue. When it contracted, they died.</li>
+    <li>Foundation funding has structurally shifted toward BIPOC organizations.</li>
+    <li>Board governance overhead is a real cost. Victory Gardens was destroyed by board dysfunction.</li>
+    <li>Fractured Atlas ($10&ndash;20/month + 8% fee on donations) provides a donation channel without 501(c)(3) overhead.</li>
+    <li><strong>Recommendation:</strong> Defer 501(c)(3). Revisit only if grant landscape justifies it&nbsp;&mdash; probably not before Year 3.</li>
+  </ul>
+
+  <h3>6.2 Capitalization</h3>
+  <h4>Minimum viable budget: single Equity storefront production (2027)</h4>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Line Item</th><th>Low</th><th>High</th></tr></thead>
+      <tbody>
+        <tr><td>Venue (Theater Wit Shared Spaces, 6 weeks)</td><td>$6,000</td><td>$6,000</td></tr>
+        <tr><td>Actor stipends (4 actors, Showcase Code)</td><td>$2,000</td><td>$4,000</td></tr>
+        <tr><td>Director + stage manager</td><td>$2,000</td><td>$3,000</td></tr>
+        <tr><td>Design + materials (scenic/lighting/sound)</td><td>$3,000</td><td>$5,000</td></tr>
+        <tr><td>Costumes + props</td><td>$1,000</td><td>$2,000</td></tr>
+        <tr><td>Rights/licensing</td><td>$1,000</td><td>$3,000</td></tr>
+        <tr><td>Insurance</td><td>$500</td><td>$1,000</td></tr>
+        <tr><td>Marketing (printing/digital; design in-house)</td><td>$500</td><td>$1,500</td></tr>
+        <tr><td>Contingency (10%)</td><td>$1,600</td><td>$2,400</td></tr>
+        <tr style="border-top:2px solid var(--accent);"><td><strong>Total</strong></td><td class="highlight"><strong>$17,600</strong></td><td class="highlight"><strong>$27,900</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>6.3 Revenue Model</h3>
+  <p>65&ndash;99 seat house, 4&ndash;6 week run, $30&ndash;$45 tickets. Conservative estimate: 60% capacity over 24&ndash;30 performances = ~1,200&ndash;1,800 tickets. At $35 average: <strong>$42,000&ndash;$63,000 gross earned revenue</strong>. After costs: net $10,000&ndash;$30,000. Supplemented by micropatronage and Fractured Atlas donations.</p>
+
+  <h3>6.4 The Danger Zone</h3>
+  <div class="callout">
+    <p><strong>The companies that died occupied an unstable middle ground</strong>&nbsp;&mdash; too ambitious for their resources, too dependent on a single founder, or too reliant on conditions that no longer exist.</p>
+    <p>The survivors are either <strong>institutionally robust</strong> (Steppenwolf: $16M, 50-year brand) or <strong>authentically lean</strong> (Rivendell: sold out 47 seats. A Red Orchid: 65 seats, 33 years, MacArthur Award).</p>
+    <p>The danger zone: $200K&ndash;$800K annual budget, 3&ndash;5 staff, leased space, 2&ndash;3 grant dependencies, subscription model. Too big to be scrappy, too small to be institutional. <strong>Do not enter this zone.</strong></p>
+  </div>
+
+  <h3>6.5 Timing</h3>
+  <p><strong>Is 2027 too early?</strong> No. The market has stabilized. Companies that were going to die have mostly died.</p>
+  <p><strong>Is 2027 too late?</strong> No. The niche is unoccupied. No one is racing to fill it.</p>
+  <p><strong>Is 2027 just right?</strong> Yes. Theater Wit Shared Spaces is funded through 2028. Steep&rsquo;s new venue opens fall 2026. TimeLine&rsquo;s new home opens 2026. Jones&rsquo;s 2025 year-end signaled storefront resurgence. The October 2026 staged reading provides a low-risk proof-of-concept before the full 2027 production.</p>
+</section>
+
+<!-- ════════════════════════════════════════ -->
+<!-- 7. THE VERDICT -->
+<!-- ════════════════════════════════════════ -->
+<section id="verdict" class="verdict-section">
+  <h2><span class="section-num">Section 07</span>The Verdict: Buying the Dip or Delusion?</h2>
+  <div class="section-rule"></div>
+
+  <h3>The Case for Delusion</h3>
+  <p>The world you are entering is materially worse than 2019: 60% fewer producing companies, 59% fewer audience members, 25&ndash;29% less earned revenue, 19 fewer stages, foundation funding reallocated, no subscription model, a sole remaining full-time critic whose attention is not guaranteed.</p>
+  <p>If you are building a traditional nonprofit theatre company&nbsp;&mdash; one that depends on grant income, a subscriber base, a permanent space, and &ldquo;if we build it they will come&rdquo;&nbsp;&mdash; the evidence says <strong>don&rsquo;t</strong>. That model has been systematically falsified by the last six years.</p>
+
+  <h3>The Case for Buying the Dip</h3>
+  <p>But you are not building that company. You are building something else: a lean LLC with fiscal sponsorship, self-funded Phase 1, earned-revenue primacy, in-house production of all design and digital materials, no board, no permanent space, no dependence on institutional philanthropy, and a specific artistic thesis that no other company in Chicago currently occupies.</p>
+
+  <ol class="evidence-list">
+    <li><strong>Every major storefront company in Chicago&rsquo;s history was founded during a downturn.</strong> Steppenwolf (1974, stagflation). Lookingglass (1988, S&amp;L crisis). A Red Orchid (1993, recession). Trap Door (1994). This is the historical norm, not the exception.</li>
+    <li><strong>Recession-born startups are 12.1% more likely to survive to year seven</strong> (Stockholm School of Economics, 2023). They grow faster, retain talent better, and innovate more.</li>
+    <li><strong>The niche is real and unoccupied.</strong> Lucas Hnath: no Chicago production since 2016. Annie Baker: since 2011. Ruhl, Karam, Eno, Harrison: nothing found. Steppenwolf does these writers at institutional scale. Nobody does them at 65 seats. You would.</li>
+    <li><strong>The venue landscape has actively improved for startups.</strong> Theater Wit&rsquo;s $600K-subsidized Shared Spaces program at $1,000/week did not exist two years ago.</li>
+    <li><strong>The talent pool has never been deeper.</strong> 76 fewer companies producing means experienced actors, directors, and designers are available.</li>
+    <li><strong>The contraction cleared the competitive field.</strong> Less competition for audiences, venues, press coverage, and the attention of the single most important critic in America&rsquo;s second theatre city.</li>
+    <li><strong>Small-budget theatres are in better financial health than large ones.</strong> Working capital positive under $10M. The crisis hits over-leveraged institutions, not lean operations.</li>
+    <li><strong>Signs of cultural recovery are visible.</strong> Jones&rsquo;s 2025 year-end: storefronts led. A Red Orchid extended twice. <em>Eureka Day</em> transferred commercially. Invictus won the Emerging Theatre Award. The ecosystem is smaller, leaner, and rewarding quality.</li>
+  </ol>
+
+  <div class="verdict-box">
+    <div class="verdict-text">This is not delusion. It is a disciplined entry into a corrected market.</div>
+    <div class="verdict-sub">Your model&nbsp;&mdash; lean, earned-income-first, no institutional dependencies, specific artistic thesis, in-house production capabilities&nbsp;&mdash; is precisely the kind of model that the data says survives.</div>
+  </div>
+
+  <p>The risk is not the market. The risk is execution. Can two founders sustain the energy, financial discipline, and artistic focus required to produce one show, learn from it, and produce the next one? The 34+ companies that closed since 2019&nbsp;&mdash; many of them run by talented, dedicated people&nbsp;&mdash; are proof that wanting it is not enough. But wanting it, plus a viable model, plus the right first show, plus the skills to execute without institutional permission? That is how every great storefront company in Chicago started.</p>
+
+  <div class="verdict-final">The dip is real. Buy it.</div>
+</section>
+
+<!-- ════════════════════════════════════════ -->
+<!-- 8. DATA GAPS -->
+<!-- ════════════════════════════════════════ -->
+<section id="gaps">
+  <h2><span class="section-num">Section 08</span>Data Gaps &amp; Manual Research Needed</h2>
+  <div class="section-rule"></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Gap</th><th>Priority</th><th>Method</th><th>Est. Time</th></tr></thead>
+      <tbody>
+        <tr><td>990 financial data for 10 companies (2018/19 vs 2022/23)</td><td class="priority-high">High</td><td>ProPublica Nonprofit Explorer (manual download)</td><td>2&ndash;3 hours</td></tr>
+        <tr><td>League of Chicago Theatres membership numbers</td><td class="priority-med">Medium</td><td>Direct inquiry to League office</td><td>1 email/call</td></tr>
+        <tr><td>AEA CAT contract minimum rates</td><td class="priority-med">Medium</td><td>Call AEA Central Regional (312-641-0393)</td><td>1 call</td></tr>
+        <tr><td>Venue rental rates (Den, Greenhouse, Athenaeum)</td><td class="priority-med">Medium</td><td>Direct inquiry to each venue</td><td>3 emails</td></tr>
+        <tr><td>Hot Tix sales data / attendance trends</td><td class="priority-low">Low</td><td>Likely not public; League inquiry</td><td>1 email</td></tr>
+        <tr><td>TCG Theatre Facts Group 1 data (&lt;$500K)</td><td class="priority-low">Low</td><td>Full report may be behind TCG access</td><td>Check access</td></tr>
+        <tr><td>Exact closure dates for 34+ companies</td><td class="priority-low">Low</td><td>Kris Vire&rsquo;s Storefront Rebellion Substack</td><td>Reading time</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════ -->
+<!-- 9. SOURCES -->
+<!-- ════════════════════════════════════════ -->
+<section id="sources" class="sources-section">
+  <h2><span class="section-num">Section 09</span>Sources</h2>
+  <div class="section-rule"></div>
+
+  <h3>Key Reports &amp; Studies</h3>
+  <ul>
+    <li><a href="https://tcg.org/Web/Web/News/Press-Releases/TCG-Releases-44th-Annual-Research-Report--Theatre-Facts-2023.aspx" target="_blank">TCG Theatre Facts 2023</a></li>
+    <li><a href="https://www.chicago.gov/city/en/depts/dca/supp_info/navigating_recovery.html" target="_blank">DCASE &ldquo;Navigating Recovery&rdquo; Report (2023)</a></li>
+    <li><a href="https://culturaldata.org/arts-and-culture-financial-and-operating-trends-in-chicago/overview/" target="_blank">DCASE/DataArts Chicago Financial Trends</a></li>
+    <li><a href="https://gddf.org/new-study-reveals-significant-impact-of-chicagos-storefront-theatres/" target="_blank">GDDF Storefront Theatre Study (2019)</a></li>
+    <li><a href="https://gddf.org/gddf-2024-chicago-small-arts-survey/" target="_blank">GDDF 2024 Chicago Small Arts Survey</a></li>
+    <li><a href="https://www.macfound.org/media/article_pdfs/enrich-chicago-funding-equity-study-2024.pdf" target="_blank">Enrich Chicago Funding Equity Study (2024)</a></li>
+  </ul>
+
+  <h3>Critical Journalism</h3>
+  <ul>
+    <li>Chris Jones, <a href="https://www.chicagotribune.com/2023/08/17/column-what-happened-to-theater-in-chicago/" target="_blank">&ldquo;What happened to theater in Chicago?&rdquo;</a> &mdash; Chicago Tribune, Aug 2023</li>
+    <li>Chris Jones, <a href="https://www.chicagotribune.com/2025/12/10/best-theater-2025/" target="_blank">&ldquo;Best theater of 2025&rdquo;</a> &mdash; Chicago Tribune, Dec 2025</li>
+    <li>Kerry Reid, <a href="https://www.americantheatre.org/2019/10/22/how-chicagos-scrappy-storefront-scene-sustains-itself/" target="_blank">&ldquo;How Chicago&rsquo;s Scrappy Storefront Scene Sustains Itself&rdquo;</a> &mdash; American Theatre, Oct 2019</li>
+    <li>Kerry Reid, <a href="https://www.americantheatre.org/2024/03/25/from-chicago-contraction-and-expansion/" target="_blank">&ldquo;From Chicago, Contraction and Expansion&rdquo;</a> &mdash; American Theatre, Mar 2024</li>
+    <li>Amanda Finn, <a href="https://www.americantheatre.org/2023/10/06/spaced-out-in-chicago-when-storefront-theatres-run-out-of-storefronts/" target="_blank">&ldquo;Spaced Out in Chicago&rdquo;</a> &mdash; American Theatre, Oct 2023</li>
+    <li><a href="https://www.americantheatre.org/2023/07/24/theatre-in-crisis-what-were-losing-and-what-comes-next/" target="_blank">&ldquo;Theatre in Crisis&rdquo;</a> &mdash; American Theatre, Jul 2023</li>
+    <li><a href="https://www.americantheatre.org/2024/06/06/they-will-survive-theatres-that-are-beating-the-odds/" target="_blank">&ldquo;They Will Survive&rdquo;</a> &mdash; American Theatre, Jun 2024</li>
+    <li><a href="https://www.cbsnews.com/chicago/news/chicago-theater-community-building-closures-stage-futures/" target="_blank">&ldquo;Taking the temperature of theater in Chicago&rdquo;</a> &mdash; CBS Chicago, 2023</li>
+    <li><a href="https://thirdcoastreview.com/front-page/2025/09/06/staging-survival-th-art-of-survival" target="_blank">&ldquo;Staging Survival&rdquo;</a> &mdash; Third Coast Review, Sep 2025</li>
+    <li>Kris Vire, <a href="https://storefrontrebellion.substack.com/" target="_blank">Storefront Rebellion</a> &mdash; Substack (ongoing)</li>
+    <li>Catherine Miller, <a href="https://frombehindthetable.substack.com/" target="_blank">From Behind the Table</a> &mdash; Substack (ongoing)</li>
+  </ul>
+
+  <h3>Institutional &amp; Venue Sources</h3>
+  <ul>
+    <li><a href="https://www.steppenwolf.org/ensemble/history" target="_blank">Steppenwolf Theatre History</a></li>
+    <li><a href="https://aredorchidtheatre.org/mission-history/" target="_blank">A Red Orchid Theatre</a></li>
+    <li><a href="https://www.actorsequity.org/resources/contracts/CAT/" target="_blank">AEA CAT Contract</a></li>
+    <li><a href="https://actorsequity.org/resources/contracts-and-codes/Staged-Reading" target="_blank">AEA Staged Reading Code</a></li>
+    <li><a href="https://www.actorsequity.org/docs/librariesprovider2/resource-documents/codes/showcase_producer_kit.pdf" target="_blank">AEA Chicago Showcase Producer Kit (PDF)</a></li>
+    <li><a href="https://www.theaterwit.org/space/" target="_blank">Theater Wit Shared Spaces</a></li>
+    <li><a href="https://www.chicagotribune.com/2025/09/03/theater-wit-receives-600000-grant-to-cut-the-cost-of-its-rental-stages/" target="_blank">Theater Wit $600K Grant</a> &mdash; Chicago Tribune</li>
+    <li><a href="https://www.fracturedatlas.org/fiscal-sponsorship" target="_blank">Fractured Atlas Fiscal Sponsorship</a></li>
+    <li><a href="https://leagueofchicagotheatres.org/space-available/" target="_blank">League of Chicago Theatres &mdash; Space Available</a></li>
+    <li><a href="https://thedentheatre.com/booking" target="_blank">The Den Theatre</a> &middot; <a href="https://www.greenhousetheater.org/rentals" target="_blank">Greenhouse</a> &middot; <a href="https://www.brambleartsloft.com/" target="_blank">Bramble Arts Loft</a> &middot; <a href="https://athenaeumcenter.org/black-box-rentals/" target="_blank">Athenaeum</a></li>
+  </ul>
+
+  <h3>Academic &amp; Business Research</h3>
+  <ul>
+    <li><a href="https://www.hhs.se/en/houseoffinance/outreach/news--press/news/2023/great-recession-babies-are-recessions-a-good-time-to-start-a-business/" target="_blank">Stockholm School of Economics: Recession Startups (2023)</a></li>
+    <li><a href="https://nonprofitquarterly.org/staging-a-comeback-how-the-nonprofit-arts-sector-has-evolved-since-the-great-recession-2/" target="_blank">Nonprofit Quarterly: Arts After the Great Recession</a></li>
+    <li><a href="https://artcenter.org/blog/the-resilience-of-the-arts-during-economic-downtimes/" target="_blank">CA Center for the Arts: Resilience During Downturns</a></li>
+    <li><a href="https://www.ideals.illinois.edu/items/107624" target="_blank">The Steppenwolf Scenario &mdash; U of Illinois</a></li>
+    <li><a href="https://culturaldata.org/pages/theatres-at-the-crossroads/" target="_blank">SMU DataArts: Theatres at the Crossroads</a></li>
+  </ul>
+
+  <h3>Other City Comparisons</h3>
+  <ul>
+    <li><a href="https://www.mprnews.org/story/2024/05/17/guthrie-theater-announces-almost-4-million-deficit" target="_blank">Guthrie Deficit</a> &middot; <a href="https://www.startribune.com/guthrie-theater-stages-a-dramatic-fiscal-comeback/601363114" target="_blank">Guthrie Recovery</a> &middot; <a href="https://tcbmag.com/jungle-theater-minneapolis-putting-season-on-hold-budgetary-problems/" target="_blank">Jungle Pause</a></li>
+    <li><a href="https://www.orartswatch.org/portland-center-stage-launches-9-million-emergency-campaign/" target="_blank">Portland Center Stage</a> &middot; <a href="https://www.opb.org/article/2023/09/25/portland-artists-repertory-theatre-shows/" target="_blank">Artists Rep</a> &middot; <a href="https://www.kgw.com/article/news/local/the-story/oregon-childrens-theatre-pause-portland-performing-arts-financial-struggle/283-43f982af-c7b8-427b-a16b-0a1b913047c9" target="_blank">OR Children&rsquo;s Theatre</a></li>
+    <li><a href="https://whyy.org/articles/philadelphia-theater-post-pandemic-attendance/" target="_blank">Philadelphia</a> &middot; <a href="https://washingtoncitypaper.com/article/769154/culturaldc-sells-source-theatre-to-restaurateurs/" target="_blank">DC Source Theatre</a> &middot; <a href="https://www.reportingtexas.com/austins-theater-groups-weather-covid-related-challenges-and-look-to-future/" target="_blank">Austin</a></li>
+  </ul>
+
+  <p class="note" style="margin-top:3rem;text-align:center;">Compiled February 19, 2026 &middot; 60+ sources &middot; 4 parallel research tracks &middot; For internal strategic use by Neorevival Theatre Company</p>
+</section>
+
+</main>
+
+<!-- ════════════════════════════════════════ -->
+<!-- JAVASCRIPT: Active nav highlighting -->
+<!-- ════════════════════════════════════════ -->
+<script>
+(function() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav ol a');
+
+  function updateActive() {
+    let current = '';
+    const scrollY = window.scrollY + 100;
+
+    sections.forEach(section => {
+      if (section.offsetTop <= scrollY) {
+        current = section.id;
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+
+  // Close mobile nav on link click
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 1000) {
+        document.querySelector('nav').classList.remove('open');
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
